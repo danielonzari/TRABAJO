@@ -1,0 +1,334 @@
+# depslib dependency file v1.0
+1624152304 source:d:\documents\utn\laboratorio de computacion\trabajo finalfinal\main.cpp
+	<iostream>
+	"rlutil.h"
+	<wingdi.h>
+	"funciones.h"
+
+1571584339 d:\documents\utn\laboratorio de computacion\trabajo finalfinal\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1624141172 d:\documents\utn\laboratorio de computacion\trabajo finalfinal\funciones.h
+	<iostream>
+	<windows.h>
+
+1624220929 source:d:\documents\utn\laboratorio de computacion\trabajo finalfinal(daniel)\main.cpp
+	<iostream>
+	"rlutil.h"
+	<wingdi.h>
+	"funciones.h"
+
+1571584339 d:\documents\utn\laboratorio de computacion\trabajo finalfinal(daniel)\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1624141172 d:\documents\utn\laboratorio de computacion\trabajo finalfinal(daniel)\funciones.h
+	<iostream>
+	<windows.h>
+
+1624235423 source:c:\users\alan\desktop\trabajo finalfinal(daniel)\main.cpp
+	<iostream>
+	"rlutil.h"
+	<wingdi.h>
+	"funciones.h"
+	<conio.h>
+
+1624233424 c:\users\alan\desktop\trabajo finalfinal(daniel)\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1624141172 c:\users\alan\desktop\trabajo finalfinal(daniel)\funciones.h
+	<iostream>
+	<windows.h>
+
+1624401513 source:d:\documents\utn\laboratorio de computacion\trabajo finalfinal(daniel) version 2\trabajo finalfinal(daniel)\main.cpp
+	<iostream>
+	"rlutil.h"
+	<wingdi.h>
+	"funciones.h"
+	<conio.h>
+
+1624233424 d:\documents\utn\laboratorio de computacion\trabajo finalfinal(daniel) version 2\trabajo finalfinal(daniel)\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1624141172 d:\documents\utn\laboratorio de computacion\trabajo finalfinal(daniel) version 2\trabajo finalfinal(daniel)\funciones.h
+	<iostream>
+	<windows.h>
+
+1624555533 source:c:\users\alan\desktop\trabajo finalfinal(daniel) version 2\trabajo finalfinal(daniel)\main.cpp
+	<iostream>
+	<stdlib.h>
+	"rlutil.h"
+	<wingdi.h>
+	"funciones.h"
+	<conio.h>
+	<windows.h>
+
+1624233424 c:\users\alan\desktop\trabajo finalfinal(daniel) version 2\trabajo finalfinal(daniel)\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1624141172 c:\users\alan\desktop\trabajo finalfinal(daniel) version 2\trabajo finalfinal(daniel)\funciones.h
+	<iostream>
+	<windows.h>
+
+1624555876 source:c:\users\alan\documents\github\tp_final\trabajo finalfinal(daniel)\dadosf.cpp
+	<iostream>
+	<stdlib.h>
+	"rlutil.h"
+	<wingdi.h>
+
+1624555669 c:\users\alan\documents\github\tp_final\trabajo finalfinal(daniel)\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1624555876 source:c:\users\alan\documents\github\tp_final\trabajo finalfinal(daniel)\main.cpp
+	<iostream>
+	<stdlib.h>
+	"rlutil.h"
+	<wingdi.h>
+	"funciones.h"
+	<conio.h>
+	<windows.h>
+	"dados.h"
+
+1624141172 c:\users\alan\documents\github\tp_final\trabajo finalfinal(daniel)\funciones.h
+	<iostream>
+	<windows.h>
+
+1624555876 c:\users\alan\documents\github\tp_final\trabajo finalfinal(daniel)\dados.h
+
+1624555876 source:c:\users\alan\documents\github\tp_final\trabajo finalfinal\dadosf.cpp
+	<iostream>
+	<stdlib.h>
+	"rlutil.h"
+	<wingdi.h>
+
+1624555669 c:\users\alan\documents\github\tp_final\trabajo finalfinal\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1625446903 source:c:\users\alan\documents\github\tp_final\trabajo finalfinal\main.cpp
+	<iostream>
+	<stdlib.h>
+	"rlutil.h"
+	<wingdi.h>
+	"funciones.h"
+	"funciones2.h"
+	<conio.h>
+	<windows.h>
+	"dados.h"
+
+1624141172 c:\users\alan\documents\github\tp_final\trabajo finalfinal\funciones.h
+	<iostream>
+	<windows.h>
+
+1624555876 c:\users\alan\documents\github\tp_final\trabajo finalfinal\dados.h
+
+1624854157 c:\users\alan\documents\github\tp_final\trabajo finalfinal\funciones2.h
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<ctime>
+
+1625456844 source:c:\users\franc\documents\github\tp_final\trabajo finalfinal\dadosf.cpp
+	<iostream>
+	<stdlib.h>
+	"rlutil.h"
+	<wingdi.h>
+
+1625456844 c:\users\franc\documents\github\tp_final\trabajo finalfinal\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1625461033 source:c:\users\franc\documents\github\tp_final\trabajo finalfinal\main.cpp
+	<iostream>
+	<stdlib.h>
+	"rlutil.h"
+	<wingdi.h>
+	"funciones.h"
+	"funciones2.h"
+	<conio.h>
+	<windows.h>
+	"dados.h"
+
+1625456844 c:\users\franc\documents\github\tp_final\trabajo finalfinal\funciones.h
+	<iostream>
+	<windows.h>
+
+1625456844 c:\users\franc\documents\github\tp_final\trabajo finalfinal\funciones2.h
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<ctime>
+
+1625456844 c:\users\franc\documents\github\tp_final\trabajo finalfinal\dados.h
+
+1625462768 source:d:\documents\utn\laboratorio de computacion\juego final 4\trabajo finalfinal\dadosf.cpp
+	<iostream>
+	<stdlib.h>
+	"rlutil.h"
+	<wingdi.h>
+
+1625462768 d:\documents\utn\laboratorio de computacion\juego final 4\trabajo finalfinal\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1625465762 source:d:\documents\utn\laboratorio de computacion\juego final 4\trabajo finalfinal\main.cpp
+	<iostream>
+	<stdlib.h>
+	"rlutil.h"
+	<wingdi.h>
+	"funciones.h"
+	"funciones2.h"
+	<conio.h>
+	<windows.h>
+	"dados.h"
+
+1625462768 d:\documents\utn\laboratorio de computacion\juego final 4\trabajo finalfinal\funciones.h
+	<iostream>
+	<windows.h>
+
+1625462768 d:\documents\utn\laboratorio de computacion\juego final 4\trabajo finalfinal\funciones2.h
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<ctime>
+
+1625462768 d:\documents\utn\laboratorio de computacion\juego final 4\trabajo finalfinal\dados.h
+
+1625462768 source:d:\documents\utn\laboratorio de computacion\juego final 4\juego final 4\trabajo finalfinal\dadosf.cpp
+	<iostream>
+	<stdlib.h>
+	"rlutil.h"
+	<wingdi.h>
+
+1625462768 d:\documents\utn\laboratorio de computacion\juego final 4\juego final 4\trabajo finalfinal\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1625465762 source:d:\documents\utn\laboratorio de computacion\juego final 4\juego final 4\trabajo finalfinal\main.cpp
+	<iostream>
+	<stdlib.h>
+	"rlutil.h"
+	<wingdi.h>
+	"funciones.h"
+	"funciones2.h"
+	<conio.h>
+	<windows.h>
+	"dados.h"
+
+1625462768 d:\documents\utn\laboratorio de computacion\juego final 4\juego final 4\trabajo finalfinal\funciones.h
+	<iostream>
+	<windows.h>
+
+1625462768 d:\documents\utn\laboratorio de computacion\juego final 4\juego final 4\trabajo finalfinal\funciones2.h
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<ctime>
+
+1625462768 d:\documents\utn\laboratorio de computacion\juego final 4\juego final 4\trabajo finalfinal\dados.h
+
