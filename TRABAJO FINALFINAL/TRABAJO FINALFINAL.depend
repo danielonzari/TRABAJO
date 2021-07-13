@@ -332,3 +332,23 @@
 
 1625462768 d:\documents\utn\laboratorio de computacion\juego final 4\juego final 4\trabajo finalfinal\dados.h
 
+1626213650 source:c:\users\alan\desktop\trabajo laboratorio\tp\trabajo finalfinal\dadosf.cpp
+	<iostream>
+	<stdlib.h>
+	"rlutil.h"
+	<wingdi.h>
+
+1626213650 c:\users\alan\desktop\trabajo laboratorio\tp\trabajo finalfinal\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
