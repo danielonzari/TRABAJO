@@ -450,7 +450,7 @@ locate(33,12+y);
     cout << " --------------------------------------- "<< endl;
     if (puntuacionj1>=4) {
         locate(30,5);
-        cout << " ----- G A N A S T E t ----- " << endl;
+        cout << " ----- G A N A S T E  ----- " << endl;
     }
     else{
         locate(30,5);
