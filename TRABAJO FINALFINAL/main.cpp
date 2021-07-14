@@ -69,11 +69,10 @@ void diferentes_resultados (int dados[2],int puntuacion,char jugador[99]){
                 cout << "La puntuacion de "<<jugador<<" es de: " << puntuacion << endl;
             }
         else {
-                            locate(37,13);
-                    cout << " PERDISTE " << endl;
+
                         locate(28,14);
             cout<<"No realizaste ninguna puntuacion ";
-            locate(23,15);
+            locate(30,15);
             cout<<"Buena suerte para la proxima";
         }
 
@@ -81,9 +80,32 @@ void diferentes_resultados (int dados[2],int puntuacion,char jugador[99]){
         }
 
     }
+    locate(25,25);
+    cout<<"PRESIONE CUALQUIER TECLA PARA SALIR"<<endl;
+    locate(26,8); //aca
+    getch();
+    system ("cls");
+    recuadro(22,2,43,10,cBLANCO,cNEGRO);
+    system("COLOR 7F");
+    setColor(GREEN);
+    locate(23,3);
+     cout<< " ---------------------------------------- " <<endl;
+    locate(23,3);
+    cout << " --------------------------------------- "<< endl;
+    if (puntuacion>=4) {
+        locate(30,5);
+        cout << " ----- G A N A S T E   ----- " << endl;
+    }
+    else{
+        locate(30,5);
+        cout << " ----- P E R D I S T E ----- " << endl;
+    }
+    locate(26,8);
+    cout<<"PRESIONE CUALQUIER TECLA PARA SALIR"<<endl;
+    getch();
 
 }
-void finales(int puntuacion){
+/*void finales(int puntuacion){
 recuadro(22,2,43,10,cBLANCO,cNEGRO);
     system("COLOR 7F");
     setColor(GREEN);
@@ -99,7 +121,7 @@ recuadro(22,2,43,10,cBLANCO,cNEGRO);
         locate(30,5);
         cout << " ----- P E R D I S T E ----- " << endl;
     }
-}
+}*/
 int main()
 {
 system("mode con: cols=80 lines=30");
@@ -450,15 +472,7 @@ locate(33,12+y);
     cout<<"dado "<<i+1<<": "<<dado[i]<<endl;
     }
     diferentes_resultados(dado,puntuacionj1,jugador1);
-    locate(25,25);
-    cout<<"PRESIONE CUALQUIER TECLA PARA SALIR"<<endl;
-    locate(26,8); //aca
-    getch();
-    system ("cls");
-    finales(puntuacionj1);
-    locate(26,8);
-    cout<<"PRESIONE CUALQUIER TECLA PARA SALIR"<<endl;
-    getch();
+
 
                                         //system("pause");//TECLEAR PARA PROCEDER A LA SIGUIENTE LINEA
                                         cls();
