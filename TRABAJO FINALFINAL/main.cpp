@@ -12,10 +12,94 @@ using namespace rlutil;
 #include "dados.h" //sdfsdfsdf
 
 
-/*void arriba(int p){
-cout<<(char)196;cout<<(char)196;cout<<(char)196;cout<<(char)196;cout<<(char)196;cout<<(char)196;cout<<(char)196;}*/
+
+void diferentes_resultados (int dados[2],int puntuacion,char jugador[99]){
+    if( (dados[0]==1) && (dados[1]==1) && (dados[2]==1) ){
+            locate(35,13);
+        cout<<"Realizaste triple 1";
+        locate(22,14);
+        puntuacion=-2;
+
+    }
+    else if((dados[0]==1 || dados[1]==1 || dados[2]==1) && (dados[0]==2 || dados[1]==2 || dados[2]==2) && (dados[0]==3 || dados[1]==3 || dados[2]==3)){
+
+            locate(25,13);
+    cout<<"Usted saco 1,2,3, perdio instantaneamente";
+    puntuacion=0;
+
+            }
+    else if ((dados[0]==dados[1]) && (dados[1]==dados[2]))
+    {locate(17,13);
+    cout<<"Felicidades usted saco numeros iguales gano instantaneamente";
+        puntuacion=100000;
+    }
+    else if((dados[0]==4 || dados[1]==4 || dados[2]==4) && (dados[0]==5 || dados[1]==5 || dados[2]==5) && (dados[0]==6 || dados[1]==6 || dados[2]==6)){
+    locate(20,13);
+    cout<<"Felicidades usted saco un 4,5,6 gano instantaneamente";
+    puntuacion=100;
+    }
+    else if ((dados[0]==0) || (dados[1]==0) || (dados[2]==0))
+    {
+        locate(24,13);
+        cout << "Perdiste a esto se lo llama 'meada'" << endl;
+
+    }
+    else if (dados[0]==dados[1])
+    {   if(dados[2]==1){ puntuacion=0;
+    }
+        else puntuacion = dados[2];
+        locate(24,13);
+        cout << "La puntuacion de "<<jugador<<" es de: " << puntuacion << endl;
+    }
+    else{
+        if (dados[0]==dados[2])
+        {if(dados[1]==1){ puntuacion=0;
+    }
+        else puntuacion = dados[1];
+            locate(24,13);
+           cout << "La puntuacion de "<<jugador<<" es de: " << puntuacion << endl;
+        }
+        else{
+            if (dados[1]==dados[2]){
+            if(dados[0]==1){ puntuacion=0;
+    }
+        else
+                puntuacion = dados[0];
+                locate(24,13);
+                cout << "La puntuacion de "<<jugador<<" es de: " << puntuacion << endl;
+            }
+        else {
+                            locate(37,13);
+                    cout << " PERDISTE " << endl;
+                        locate(28,14);
+            cout<<"No realizaste ninguna puntuacion ";
+            locate(23,15);
+            cout<<"Buena suerte para la proxima";
+        }
 
 
+        }
+
+    }
+
+}
+void finales(int puntuacion){
+recuadro(22,2,43,10,cBLANCO,cNEGRO);
+    system("COLOR 7F");
+    setColor(GREEN);
+    locate(23,3);
+     cout<< " ---------------------------------------- " <<endl;
+    locate(23,3);
+    cout << " --------------------------------------- "<< endl;
+    if (puntuacion>=4) {
+        locate(30,5);
+        cout << " ----- G A N A S T E   ----- " << endl;
+    }
+    else{
+        locate(30,5);
+        cout << " ----- P E R D I S T E ----- " << endl;
+    }
+}
 int main()
 {
 system("mode con: cols=80 lines=30");
@@ -365,97 +449,13 @@ locate(33,12+y);
                  locate(40,i+7);
     cout<<"dado "<<i+1<<": "<<dado[i]<<endl;
     }
-    if( (dado[0]==1) && (dado[1]==1) && (dado[2]==1) ){
-            locate(35,13);
-        cout<<"Realizaste triple 1";
-        locate(22,14);
-        puntuacionj1=-2;
-
-    }
-    else if((dado[0]==1 || dado[1]==1 || dado[2]==1) && (dado[0]==2 || dado[1]==2 || dado[2]==2) && (dado[0]==3 || dado[1]==3 || dado[2]==3)){
-
-            locate(25,13);
-    cout<<"Usted saco 1,2,3, perdio instantaneamente";
-    puntuacionj1=0;
-
-            }
-    else if ((dado[0]==dado[1]) && (dado[1]==dado[2]))
-    {locate(17,13);
-    cout<<"Felicidades usted saco numeros iguales gano instantaneamente";
-        puntuacionj1=100000;
-    }
-    else if((dado[0]==4 || dado[1]==4 || dado[2]==4) && (dado[0]==5 || dado[1]==5 || dado[2]==5) && (dado[0]==6 || dado[1]==6 || dado[2]==6)){
-    locate(20,13);
-    cout<<"Felicidades usted saco un 4,5,6 gano instantaneamente";
-    puntuacionj1=100;
-    }
-    else if ((dado[0]==0) || (dado[1]==0) || (dado[2]==0))
-    {
-        locate(24,13);
-        cout << "Perdiste a esto se lo llama 'meada'" << endl;
-
-    }
-    else if (dado[0]==dado[1])
-    {   if(dado[2]==1){ puntuacionj1=0;
-    }
-        else puntuacionj1 = dado[2];
-        locate(24,13);
-        cout << "La puntuacion de "<<jugador1<<" es de: " << puntuacionj1 << endl;
-    }
-    else{
-        if (dado[0]==dado[2])
-        {if(dado[1]==1){ puntuacionj1=0;
-    }
-        else puntuacionj1 = dado[1];
-            locate(24,13);
-           cout << "La puntuacion de "<<jugador1<<" es de: " << puntuacionj1 << endl;
-        }
-        else{
-            if (dado[1]==dado[2]){
-            if(dado[0]==1){ puntuacionj1=0;
-    }
-        else
-                puntuacionj1 = dado[0];
-                locate(24,13);
-                cout << "La puntuacion de "<<jugador1<<" es de: " << puntuacionj1 << endl;
-            }
-        else {
-                            locate(37,13);
-                    cout << " PERDISTE " << endl;
-                        locate(28,14);
-            cout<<"No realizaste ninguna puntuacion ";
-            locate(23,15);
-            cout<<"Buena suerte para la proxima";
-        }
-
-
-        }
-
-    }
+    diferentes_resultados(dado,puntuacionj1,jugador1);
     locate(25,25);
     cout<<"PRESIONE CUALQUIER TECLA PARA SALIR"<<endl;
     locate(26,8); //aca
     getch();
     system ("cls");
-
-
-
-
-    recuadro(22,2,43,10,cBLANCO,cNEGRO);
-    system("COLOR 7F");
-    setColor(GREEN);
-    locate(23,3);
-     cout<< " ---------------------------------------- " <<endl;
-    locate(23,3);
-    cout << " --------------------------------------- "<< endl;
-    if (puntuacionj1>=4) {
-        locate(30,5);
-        cout << " ----- G A N A S T E f  ----- " << endl;
-    }
-    else{
-        locate(30,5);
-        cout << " ----- P E R D I S T E ----- " << endl;
-    }
+    finales(puntuacionj1);
     locate(26,8);
     cout<<"PRESIONE CUALQUIER TECLA PARA SALIR"<<endl;
     getch();

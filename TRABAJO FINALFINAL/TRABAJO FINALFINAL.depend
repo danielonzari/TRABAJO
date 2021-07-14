@@ -352,3 +352,46 @@
 	<sys/types.h>
 	<sys/time.h>
 
+1626211704 source:d:\documents\utn\laboratorio de computacion\trabajo\trabajo finalfinal\dadosf.cpp
+	<iostream>
+	<stdlib.h>
+	"rlutil.h"
+	<wingdi.h>
+
+1626211704 d:\documents\utn\laboratorio de computacion\trabajo\trabajo finalfinal\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
+1626233684 source:d:\documents\utn\laboratorio de computacion\trabajo\trabajo finalfinal\main.cpp
+	<iostream>
+	<stdlib.h>
+	"rlutil.h"
+	<wingdi.h>
+	"funciones.h"
+	"funciones2.h"
+	<conio.h>
+	<windows.h>
+	"dados.h"
+
+1626211704 d:\documents\utn\laboratorio de computacion\trabajo\trabajo finalfinal\funciones.h
+	<iostream>
+	<windows.h>
+
+1626211704 d:\documents\utn\laboratorio de computacion\trabajo\trabajo finalfinal\funciones2.h
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<ctime>
+
+1626211704 d:\documents\utn\laboratorio de computacion\trabajo\trabajo finalfinal\dados.h
+
