@@ -105,7 +105,29 @@ void diferentes_resultados (int dados[2],int puntuacion,char jugador[99]){
     getch();
 
 }
+void menu_unico_jugador (char jugador[100]){
+system("cls");
+                                        system("COLOR 7F");
+                                        recuadro(23,6,45,4,cBLANCO,cNEGRO);
+                                        system("COLOR 7F");
+                                        setColor(GREEN);
+                                        system("COLOR 7F");
+                                        recuadro(10,15,69,6,cBLANCO,cNEGRO);
+                                        system("COLOR 7F");
+                                        setColor(GREEN);
+                                        locate(27,8);
+                                        cout<<"Nombre del jugador : ";
+                                        cin>>jugador;
+                                        locate(14,16);
+                                        cout<<"Como no enfrentara a otro jugador, para ganar debera sacar una"; locate(30,17); cout<< "puntuacion mayor o igual a 4";
+                                        locate(22,25);
+                                        cout<<"PRESIONE CUALQUIER TECLA PARA CONTINUAR"<<endl;
+                                        getch();
 
+
+
+
+}
 int main()
 {
 system("mode con: cols=80 lines=30");
@@ -212,23 +234,7 @@ locate(33,12+y);
                             case 1://ENTER
                                     switch(y){
                                     case 6://SIMULADOR
-                                        system("cls");
-                                        system("COLOR 7F");
-                                        recuadro(23,6,45,4,cBLANCO,cNEGRO);
-                                        system("COLOR 7F");
-                                        setColor(GREEN);
-                                        system("COLOR 7F");
-                                        recuadro(10,15,69,6,cBLANCO,cNEGRO);
-                                        system("COLOR 7F");
-                                        setColor(GREEN);
-                                        locate(27,8);
-                                        cout<<"Nombre del jugador : ";
-                                        cin>>jugador1;
-                                        locate(14,16);
-                                        cout<<"Como no enfrentara a otro jugador, para ganar debera sacar una"; locate(30,17); cout<< "puntuacion mayor o igual a 4";
-                                        locate(22,25);
-                                        cout<<"PRESIONE CUALQUIER TECLA PARA CONTINUAR"<<endl;
-                                        getch();
+                                        menu_unico_jugador(jugador1);
                                         locate(30,20);
                                         cambiardado1=0;
     cambiardado2=0;
@@ -472,22 +478,7 @@ locate(33,12+y);
                                     case 0:
                                      cls();
                                      system("cls");
-                                        system("COLOR 7F");
-                                        recuadro(23,6,45,4,cBLANCO,cNEGRO);
-                                        system("COLOR 7F");
-                                        setColor(GREEN);
-                                        system("COLOR 7F");
-                                        recuadro(10,15,69,6,cBLANCO,cNEGRO);
-                                        system("COLOR 7F");
-                                        setColor(GREEN);
-                                        locate(27,8);
-                                        cout<<"Nombre del jugador : ";
-                                        cin>>jugador1;
-                                        locate(14,16);
-                                        cout<<"Como no enfrentara a otro jugador, para ganar debera sacar una"; locate(30,17); cout<< "puntuacion mayor o igual a 4";
-                                        locate(22,25);
-                                        cout<<"PRESIONE CUALQUIER TECLA PARA CONTINUAR"<<endl;
-                                        getch();
+                                        menu_unico_jugador(jugador1);
                                         locate(30,20);
 
     cambiardado1=0;
