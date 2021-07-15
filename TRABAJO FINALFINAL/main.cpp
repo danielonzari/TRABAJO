@@ -13,14 +13,10 @@ using namespace rlutil;
 #include "dados.h"
 
 
-void interfaz1(const char *texto){
-recuadro(1,1,79,29,cBLANCO,cGRIS_CLARO);
-recuadro(1,1,79,3,cBLANCO,cGRIS_CLARO);
-locate(35,2);
-cout<<texto;
+void interfaz1(){
 
-
-
+recuadro(1,1,79,29,cNEGRO,cGRIS_CLARO);
+recuadro(1,1,79,3,cNEGRO,cGRIS_CLARO);
 }
 void diferentes_resultados (int dados[2],int puntuacion,char jugador[99]){
     if( (dados[0]==1) && (dados[1]==1) && (dados[2]==1) ){
@@ -115,10 +111,9 @@ void diferentes_resultados (int dados[2],int puntuacion,char jugador[99]){
 
 }
 void menu_unico_jugador (char jugador[100],const char *texto){
-
                                  system("cls");
 
-                                        interfaz1(texto);
+                                        interfaz1();
                                         recuadro(20,6,45,4,cBLANCO,cNEGRO);
                                         system("COLOR 7F");
                                         setColor(GREEN);
@@ -126,7 +121,8 @@ void menu_unico_jugador (char jugador[100],const char *texto){
                                         recuadro(6,15,69,6,cBLANCO,cNEGRO);
                                         system("COLOR 7F");
                                         setColor(GREEN);
-
+                                         locate(35,2);
+                                        cout<<texto;
                                          locate(7,16);
                                         cout<<"En este modo podras indicar el valor de los 3 dados para evaluar ";
                                         locate(7,17);
@@ -147,7 +143,83 @@ void menu_unico_jugador (char jugador[100],const char *texto){
 
 
 }
+void segunda_tirada (int otratiradaa, int conservaar, char jugador[100], int cambiardados1,int cambiardados2,int dados[2],int i){
+ locate(21,14);
+    cout<<"Desea realizar una segunda tirada? 1(si) 2(no)"<<endl;
+    locate(43,15);
+    cin>>otratiradaa;
+        if (otratiradaa==1){
+    locate(29,17);
+    cout<<"Desea cambiar algun dado?";locate(12,18);cout<<"1(cambiar los 3),2(si, cambiar 1 dado),3(cambiar 2 dados)"<<endl;
+    locate(43,19);
+    cin>>conservaar;
+if(conservaar==1){
+        setColor(GREEN);
+    locate(23,3);
+     cout<< " ---------------------------------------- " <<endl;
+    locate(36,4);
+    cout<<"turno de: "<< jugador<< endl;
+    locate(23,5);
+    cout<< " ---------------------------------------- " <<endl;
+    cambiardados1=0;
+    cambiardados2=0;
+    cargarAleatorio(dados,3,6);
+    for (i=0;i<=2;i++){
+            locate(40,i+7);
+    cout<<"dado "<<i+1<<": "<<dados[i]<<endl;// ACA TERMINE
+    }
+}
+        if(conservaar==2){
+        locate(21,19);
+     cout<<"Que dado desea cambiar? (1,2,3)";
+     locate(43,20);
+     cin>>cambiardados1;
+     system("cls");
+        }
 
+        else if(conservaar==3){
+        locate(21,19);
+    cout<<"Ingrese el primer dado a cambiar (1,2,3)";
+    locate(43,20);
+    cin>>cambiardados1;
+    locate(21,20);
+    cout<<"Ingrese el segundo dado a cambiar(1,2,3) ";
+    locate(43,21);
+    cin>>cambiardados2;
+        }
+
+    if((cambiardados1==1 && cambiardados2==2)|| (cambiardados2==1 && cambiardados1==2)) {
+     srand(time(NULL));
+    dados[0]=(rand()%6)+1;
+    srand(time(NULL));
+    dados[1]=(rand()%6)+1;
+    }
+    else if((cambiardados1==2 && cambiardados2==3) || (cambiardados1==3 && cambiardados2==2)){
+    srand(time(NULL));
+    dados[1]=(rand()%6)+1;
+    srand(time(NULL));
+    dados[2]=(rand()%6)+1;
+    }
+    else if ((cambiardados1==1 && cambiardados2==3) || (cambiardados2==1 && cambiardados1==3)){
+         srand(time(NULL));
+    dados[0]=(rand()%6)+1;
+     srand(time(NULL));
+    dados[2]=(rand()%6)+1;
+    }
+    else if(cambiardados1==1){
+    srand(time(NULL));
+    dados[0]=(rand()%6)+1;
+
+    }
+    else if(cambiardados1==2){
+    srand(time(NULL));
+    dados[1]=(rand()%6)+1;
+    }
+    else if(cambiardados1==3){
+    srand(time(NULL));
+    dados[2]=(rand()%6)+1;
+    }
+        }}
 int main()
 {
 system("mode con: cols=80 lines=30");
@@ -261,7 +333,7 @@ locate(33,12+y);
                                         cambiardado1=0;
                                          cambiardado2=0;
     system("cls");
-    interfaz1("simulador");
+    interfaz1();
     recuadro(20,5,43,2,cBLANCO,cNEGRO);
 recuadro(20,8,43,5,cBLANCO,cNEGRO);
 
@@ -541,82 +613,7 @@ default:
             locate(40,i+7);
     cout<<"dado "<<i+1<<": "<<dado[i]<<endl;
     }
-locate(21,14); //ACA EMPECE
-    cout<<"Desea realizar una segunda tirada? 1(si) 2(no)"<<endl;
-    locate(43,15);
-    cin>>otratirada;
-        if (otratirada==1){
-    locate(29,17);
-    cout<<"Desea cambiar algun dado?";locate(12,18);cout<<"1(cambiar los 3),2(si, cambiar 1 dado),3(cambiar 2 dados)"<<endl;
-    locate(43,19);
-    cin>>conservar;
-if(conservar==1){
-        setColor(GREEN);
-    locate(23,3);
-     cout<< " ---------------------------------------- " <<endl;
-    locate(36,4);
-    cout<<"turno de: "<< jugador1<< endl;
-    locate(23,5);
-    cout<< " ---------------------------------------- " <<endl;
-    cambiardado1=0;
-    cambiardado2=0;
-    cargarAleatorio(dado,3,6);
-    for (i=0;i<=2;i++){
-            locate(40,i+7);
-    cout<<"dado "<<i+1<<": "<<dado[i]<<endl;// ACA TERMINE
-    }
-}
-        if(conservar==2){
-        locate(21,19);
-     cout<<"Que dado desea cambiar? (1,2,3)";
-     locate(43,20);
-     cin>>cambiardado1;
-     system("cls");
-        }
-
-        else if(conservar==3){
-        locate(21,18);
-    cout<<"Ingrese el primer dado a cambiar (1,2,3)";
-    locate(43,19);
-    cin>>cambiardado1;
-    locate(21,20);
-    cout<<"Ingrese el segundo dado a cambiar(1,2,3) ";
-    locate(43,21);
-    cin>>cambiardado2;
-        }
-
-    if((cambiardado1==1 && cambiardado2==2)|| (cambiardado2==1 && cambiardado1==2)) {
-     srand(time(NULL));
-    dado[0]=(rand()%6)+1;
-    srand(time(NULL));
-    dado[1]=(rand()%6)+1;
-    }
-    else if((cambiardado1==2 && cambiardado2==3) || (cambiardado1==3 && cambiardado2==2)){
-    srand(time(NULL));
-    dado[1]=(rand()%6)+1;
-    srand(time(NULL));
-    dado[2]=(rand()%6)+1;
-    }
-    else if ((cambiardado1==1 && cambiardado2==3) || (cambiardado2==1 && cambiardado1==3)){
-         srand(time(NULL));
-    dado[0]=(rand()%6)+1;
-     srand(time(NULL));
-    dado[2]=(rand()%6)+1;
-    }
-    else if(cambiardado1==1){
-    srand(time(NULL));
-    dado[0]=(rand()%6)+1;
-
-    }
-    else if(cambiardado1==2){
-    srand(time(NULL));
-    dado[1]=(rand()%6)+1;
-    }
-    else if(cambiardado1==3){
-    srand(time(NULL));
-    dado[2]=(rand()%6)+1;
-    }
-        }
+    segunda_tirada(otratirada,conservar,jugador1,cambiardado1,cambiardado2,dado,i);
 
         system("cls");
     recuadro(22,2,43,10,cBLANCO,cNEGRO);
