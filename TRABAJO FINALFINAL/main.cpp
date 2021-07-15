@@ -6,13 +6,18 @@
 #include "funciones2.h"
 #include <conio.h>
 #include <windows.h>
+#include <string.h>
 
 using namespace std;
 using namespace rlutil;
-#include "dados.h" //sdfsdfsdf
+#include "dados.h"
 
 
+void interfaz1(){
 
+recuadro(1,1,79,29,cBLANCO,cGRIS_CLARO);
+recuadro(1,1,79,3,cBLANCO,cGRIS_CLARO);
+}
 void diferentes_resultados (int dados[2],int puntuacion,char jugador[99]){
     if( (dados[0]==1) && (dados[1]==1) && (dados[2]==1) ){
             locate(35,13);
@@ -109,17 +114,7 @@ void menu_unico_jugador (char jugador[100]){
 
                                  system("cls");
 
-                                 recuadro(1,1,79,29,cBLANCO,cNEGRO);
-
-
-                                 recuadro(1,1,79,3,cBLANCO,cNEGRO);
-
-                                   locate(34,2);
-
-                                 cout<<" SIMULADOR ";
-
-
-
+                                        interfaz1();
                                         recuadro(20,6,45,4,cBLANCO,cNEGRO);
                                         system("COLOR 7F");
                                         setColor(GREEN);
@@ -150,6 +145,7 @@ void menu_unico_jugador (char jugador[100]){
 
 
 }
+
 int main()
 {
 system("mode con: cols=80 lines=30");
@@ -260,19 +256,28 @@ locate(33,12+y);
                                         menu_unico_jugador(jugador1);
                                         locate(30,20);
                                         cambiardado1=0;
-    cambiardado2=0;
+                                         cambiardado2=0;
     system("cls");
-    recuadro(20,2,43,10,cBLANCO,cNEGRO);
+    interfaz1();
+    recuadro(20,5,43,2,cBLANCO,cNEGRO);
+recuadro(20,8,43,10,cBLANCO,cNEGRO);
+
+
                                         system("COLOR 7F");
                                         setColor(GREEN);
+                                            locate(36,6);
+    cout<<"TU TURNO;"<<jugador1;
+    locate(35,2);
+    cout<<" SIMULADOR ";
 
-    locate(23,3);
+
+    locate(23,10);
     cout<<"Ingresa el primer dado: ";
     cin>>dado[0];
-    locate(23,4);
+    locate(23,11);
     cout<<"Ingresa el segundo dado: ";
     cin>>dado[1];
-    locate(23,5);
+    locate(23,12);
     cout<<"Ingresa el tercer dado: ";
     cin>>dado[2];
     system("cls");
