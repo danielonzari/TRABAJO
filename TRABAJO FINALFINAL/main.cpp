@@ -13,10 +13,14 @@ using namespace rlutil;
 #include "dados.h"
 
 
-void interfaz1(){
-
+void interfaz1(const char *texto){
 recuadro(1,1,79,29,cBLANCO,cGRIS_CLARO);
 recuadro(1,1,79,3,cBLANCO,cGRIS_CLARO);
+locate(35,2);
+cout<<texto;
+
+
+
 }
 void diferentes_resultados (int dados[2],int puntuacion,char jugador[99]){
     if( (dados[0]==1) && (dados[1]==1) && (dados[2]==1) ){
@@ -110,11 +114,11 @@ void diferentes_resultados (int dados[2],int puntuacion,char jugador[99]){
     getch();
 
 }
-void menu_unico_jugador (char jugador[100]){
+void menu_unico_jugador (char jugador[100],const char *texto){
 
                                  system("cls");
 
-                                        interfaz1();
+                                        interfaz1(texto);
                                         recuadro(20,6,45,4,cBLANCO,cNEGRO);
                                         system("COLOR 7F");
                                         setColor(GREEN);
@@ -122,9 +126,7 @@ void menu_unico_jugador (char jugador[100]){
                                         recuadro(6,15,69,6,cBLANCO,cNEGRO);
                                         system("COLOR 7F");
                                         setColor(GREEN);
-                                        locate(35,2);
 
-                                        cout<<" SIMULADOR ";
                                          locate(7,16);
                                         cout<<"En este modo podras indicar el valor de los 3 dados para evaluar ";
                                         locate(7,17);
@@ -253,14 +255,15 @@ locate(33,12+y);
                                     switch(y){
                                     case 6://SIMULADOR
 
-                                        menu_unico_jugador(jugador1);
+                                        menu_unico_jugador(jugador1,"SIMULADOR");
+
                                         locate(30,20);
                                         cambiardado1=0;
                                          cambiardado2=0;
     system("cls");
-    interfaz1();
+    interfaz1("simulador");
     recuadro(20,5,43,2,cBLANCO,cNEGRO);
-recuadro(20,8,43,10,cBLANCO,cNEGRO);
+recuadro(20,8,43,5,cBLANCO,cNEGRO);
 
 
                                         system("COLOR 7F");
@@ -271,15 +274,12 @@ recuadro(20,8,43,10,cBLANCO,cNEGRO);
     cout<<" SIMULADOR ";
 
 
-    locate(23,10);
-    cout<<"Ingresa el primer dado: ";
-    cin>>dado[0];
-    locate(23,11);
-    cout<<"Ingresa el segundo dado: ";
-    cin>>dado[1];
-    locate(23,12);
-    cout<<"Ingresa el tercer dado: ";
-    cin>>dado[2];
+
+    for(int j=0;j<3;j++){
+    locate(23,10+1);
+    cout<<"INGRESE EL DADO "<<j+1<<" ;";
+    cin>>dado[j];
+    }
     system("cls");
      recuadro(20,2,43,10,cBLANCO,cNEGRO);
     system("COLOR 7F");
@@ -519,7 +519,7 @@ default:
                                     case 0:
                                      cls();
                                      system("cls");
-                                        menu_unico_jugador(jugador1);
+                                        menu_unico_jugador(jugador1,"JUGADOR 1");
                                         locate(30,20);
 
     cambiardado1=0;
