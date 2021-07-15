@@ -106,22 +106,44 @@ void diferentes_resultados (int dados[2],int puntuacion,char jugador[99]){
 
 }
 void menu_unico_jugador (char jugador[100]){
-system("cls");
-                                        system("COLOR 7F");
-                                        recuadro(23,6,45,4,cBLANCO,cNEGRO);
+
+                                 system("cls");
+
+                                 recuadro(1,1,79,29,cBLANCO,cNEGRO);
+
+
+                                 recuadro(1,1,79,3,cBLANCO,cNEGRO);
+
+                                   locate(34,2);
+
+                                 cout<<" SIMULADOR ";
+
+
+
+                                        recuadro(20,6,45,4,cBLANCO,cNEGRO);
                                         system("COLOR 7F");
                                         setColor(GREEN);
                                         system("COLOR 7F");
-                                        recuadro(10,15,69,6,cBLANCO,cNEGRO);
+                                        recuadro(6,15,69,6,cBLANCO,cNEGRO);
                                         system("COLOR 7F");
                                         setColor(GREEN);
+                                        locate(35,2);
+
+                                        cout<<" SIMULADOR ";
+                                         locate(7,16);
+                                        cout<<"En este modo podras indicar el valor de los 3 dados para evaluar ";
+                                        locate(7,17);
+                                        cout<<"el funcionamiento";
                                         locate(27,8);
+
                                         cout<<"Nombre del jugador : ";
                                         cin>>jugador;
-                                        locate(14,16);
-                                        cout<<"Como no enfrentara a otro jugador, para ganar debera sacar una"; locate(30,17); cout<< "puntuacion mayor o igual a 4";
+
+                                        locate(38,24);
+                                        cout<<"PERFECTO"<<endl;
                                         locate(22,25);
                                         cout<<"PRESIONE CUALQUIER TECLA PARA CONTINUAR"<<endl;
+
                                         getch();
 
 
@@ -213,7 +235,7 @@ locate(33,12+y);
                          recuadro(20,4,41,3,cBLANCO,cNEGRO);
                          recuadro(26,10,29,10,cBLANCO,cNEGRO);
                          system("COLOR 7F");
-                         locate(38,5);
+                         locate(39,5);
                          setColor(GREEN);
                          cout<<"MODO"<<endl;
                          locate(35,12);
@@ -234,14 +256,16 @@ locate(33,12+y);
                             case 1://ENTER
                                     switch(y){
                                     case 6://SIMULADOR
+
                                         menu_unico_jugador(jugador1);
                                         locate(30,20);
                                         cambiardado1=0;
     cambiardado2=0;
     system("cls");
-    recuadro(22,2,43,10,cBLANCO,cNEGRO);
+    recuadro(20,2,43,10,cBLANCO,cNEGRO);
                                         system("COLOR 7F");
                                         setColor(GREEN);
+
     locate(23,3);
     cout<<"Ingresa el primer dado: ";
     cin>>dado[0];
@@ -252,20 +276,32 @@ locate(33,12+y);
     cout<<"Ingresa el tercer dado: ";
     cin>>dado[2];
     system("cls");
-     recuadro(22,2,43,10,cBLANCO,cNEGRO);
+     recuadro(20,2,43,10,cBLANCO,cNEGRO);
     system("COLOR 7F");
     setColor(GREEN);
-    locate(23,3);
+    locate(21,3);
     cout<< " ---------------------------------------- " <<endl;
-    locate(36,4);
-    cout<<"turno de: "<< jugador1<< endl;
-    locate(23,5);
+    locate(35,4);
+    cout<<"TUS DADOS SON: "<<endl;
+    locate(21,5);
     cout<< " ---------------------------------------- " <<endl;
 
+switch (*dado)
+{
+case 1 :
+    recuadro(4,1,8,4,cROJO_CLARO,cGRIS_CLARO);
+        gotoxy(8,3);
+        cout<<(char)4;
+    break;
+
+default:
+    break;
+}
+/*
     for (i=0;i<=2;i++){
             locate(40,i+7);
     cout<<"dado "<<i+1<<": "<<dado[i]<<endl;
-    }
+    }*/
     locate(21,14);
     cout<<"Desea realizar una segunda tirada? 1(si) 2(no)"<<endl;
     locate(43,15);

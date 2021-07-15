@@ -395,3 +395,26 @@
 
 1626211704 d:\documents\utn\laboratorio de computacion\trabajo\trabajo finalfinal\dados.h
 
+1626377043 source:c:\users\alan\desktop\trabajo laboratorio\tp\trabajo finalfinal\main.cpp
+	<iostream>
+	<stdlib.h>
+	"rlutil.h"
+	<wingdi.h>
+	"funciones.h"
+	"funciones2.h"
+	<conio.h>
+	<windows.h>
+	"dados.h"
+
+1626213650 c:\users\alan\desktop\trabajo laboratorio\tp\trabajo finalfinal\funciones.h
+	<iostream>
+	<windows.h>
+
+1626213650 c:\users\alan\desktop\trabajo laboratorio\tp\trabajo finalfinal\funciones2.h
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<ctime>
+
+1626213650 c:\users\alan\desktop\trabajo laboratorio\tp\trabajo finalfinal\dados.h
+
