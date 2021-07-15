@@ -11,10 +11,22 @@
 using namespace std;
 using namespace rlutil;
 #include "dados.h"
+void comentariojugador1(){
+                                        locate(7,16);
+                                        cout<<"Tu objetivo es superar la puntuacion de 4 y no perder el dinero  ";
+                                        locate(7,17);
+                                        cout<<"apostado el funcionamiento";
 
+}
+void comentariosimulador(){
+                                        locate(7,16);
+                                        cout<<"En este modo podras indicar el valor de los 3 dados para evaluar ";
+                                        locate(7,17);
+                                        cout<<"el funcionamiento";
+
+}
 
 void interfaz1(){
-
 recuadro(1,1,79,29,cNEGRO,cGRIS_CLARO);
 recuadro(1,1,79,3,cNEGRO,cGRIS_CLARO);
 }
@@ -110,7 +122,7 @@ void diferentes_resultados (int dados[2],int puntuacion,char jugador[99]){
     getch();
 
 }
-void menu_unico_jugador (char jugador[100],const char *texto){
+void menu_unico_jugador (char jugador[100],const char *texto,int y){
                                  system("cls");
 
                                         interfaz1();
@@ -123,10 +135,18 @@ void menu_unico_jugador (char jugador[100],const char *texto){
                                         setColor(GREEN);
                                          locate(35,2);
                                         cout<<texto;
-                                         locate(7,16);
-                                        cout<<"En este modo podras indicar el valor de los 3 dados para evaluar ";
-                                        locate(7,17);
-                                        cout<<"el funcionamiento";
+                                        switch (y)
+                                        {
+                                        case 1:
+                                          comentariosimulador();
+                                            break;
+                                        case 2:
+                                          comentariojugador1();
+                                            break;
+                                        default:
+                                            break;
+                                        }
+
                                         locate(27,8);
 
                                         cout<<"Nombre del jugador : ";
@@ -327,7 +347,7 @@ locate(33,12+y);
                                     switch(y){
                                     case 6://SIMULADOR
 
-                                        menu_unico_jugador(jugador1,"SIMULADOR");
+                                        menu_unico_jugador(jugador1,"SIMULADOR",1);
 
                                         locate(30,20);
                                         cambiardado1=0;
@@ -588,10 +608,10 @@ default:
 
 
                                   break ;
-                                    case 0:
+                                    case 0://JUGADOR 1
                                      cls();
                                      system("cls");
-                                        menu_unico_jugador(jugador1,"JUGADOR 1");
+                                        menu_unico_jugador(jugador1,"JUGADOR 1",2);
                                         locate(30,20);
 
     cambiardado1=0;
