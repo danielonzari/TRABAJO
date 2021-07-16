@@ -301,7 +301,90 @@ if( (dados[0]==1) && (dados[1]==1) && (dados[2]==1) ){
 
     }
 }
+void instrucciones(){
+recuadro(1,1,79,29,cBLANCO,cNEGRO);
+                                 recuadro(1,1,79,3,cBLANCO,cNEGRO);
+                                 locate(35,2);
+                                 system("COLOR 7F");
+                                 setColor(GREEN);
+                                 cout<<" REGLAS";
+                                 locate(2,6);
+cout<<(char)254<<"Cada jugador tiene hasta un maximo de 2 tiradas para conseguir una puntuacion"<<endl;
+    locate(2,8);
+cout<<(char)254<<"Se deben lanzar los tres dados al mismo tiempo en el recipiente."<<endl;
+locate(2,10);
+/*cout<<(char)254<<"Si un dado sale del recipiente el jugador pierde automaticamente y debe "<<endl;
+locate(2,12);
+cout<<"pagar la cantidad de dinero apostada. A esto se le llama meada"<<endl;*/
 
+    locate(22,22);
+    cout<<"PRESIONE CUALQUIER TECLA PARA CONTINUAR"<<endl;
+    getch();
+    cls();
+
+                                 recuadro(1,1,79,29,cBLANCO,cNEGRO);
+                                 recuadro(1,1,79,3,cBLANCO,cNEGRO);
+                                 locate(35,2);
+                                 system("COLOR 7F");
+                                 setColor(GREEN);
+                                 cout<<"OBJETIVO";
+
+    locate(2,6);
+    cout<<(char)254<<"El objetivo del juego es conseguir que dos dados marquen el mismo numero"<<endl;locate(4,7);cout<<"El dado restante marcara la puntuacion del jugador."<<endl;
+    locate(2,9);
+    cout<<(char)254<<"Una vez realizadas las tiradas se compara la puntuacion de ambos jugadores"<<endl;locate(3,10);cout<<"y el que tenga la puntuacion mas alta gana la partida.";
+    locate(22,22);
+    cout<<"PRESIONE CUALQUIER TECLA PARA CONTINUAR"<<endl;
+    getch();
+    locate(2,12);
+    cout<<(char)254<<"Si ambos jugadores acaban con la misma puntuacion o no hacen ninguna "<<endl;
+    locate(2,13);
+    cout<<"puntuacion en todas sus tiradas es un empate y ninguno de los dos gana"<<endl;
+    locate(2,16);
+    cout<<(char)254<<"Ademas el dinero tiene que ser apostado de nuevo para otra partida.";
+
+    locate(22,22);
+    cout<<"PRESIONE CUALQUIER TECLA PARA CONTINUAR"<<endl;
+    getch();
+cls();
+
+
+
+                                 recuadro(1,1,79,29,cBLANCO,cNEGRO);
+                                 recuadro(1,1,79,3,cBLANCO,cNEGRO);
+                                 locate(33,2);
+                                 system("COLOR 7F");
+                                 setColor(GREEN);
+                                 cout<<"REGLAS ESPECIALES";
+
+
+
+locate(2,6);
+    cout<<(char)254<<"Si un jugador obtiene los tres dados del mismo numero(triple 2,3,4,5 o 6)"<<endl;locate(4,7);cout<< "ganara automaticamente la partida y obtendra tres veces la cantidad de"<<endl;locate(4,8);cout<< "dinero apostada originalmente.";
+    locate(22,22);
+    cout<<"PRESIONE CUALQUIER TECLA PARA CONTINUAR"<<endl;
+    getch();
+    locate(2,10);
+
+
+    cout<<(char)254<<"Sin embargo, si un jugador obtiene un 1 en los tres dados, pierde."<<endl;
+    locate(2,11);
+    cout<< "automaticamente y debera pagar el triple de la cantidad de dinero apostada"<<endl;locate(2,13);cout<< "a su oponente. Estas dos reglas especiales se llaman Tormenta."<<endl;
+      locate(22,22);
+    cout<<"PRESIONE CUALQUIER TECLA PARA CONTINUAR"<<endl;
+    locate(2,13);
+
+    cout<<(char)254<<"Por otra parte, si un jugador obtiene un 4-5-6 ganara de forma automatica,"<<endl;
+      locate(22,22);
+    cout<<"PRESIONE CUALQUIER TECLA PARA CONTINUAR"<<endl;
+    locate(2,14);
+    cout<<"ademas su rival debera pagarle el doble de lo apostado."<<endl;
+
+        getch();
+    locate(2,16);
+    cout<<(char)254<<"Por el contrario, si un jugador obtiene un 1-2-3 perdera automaticamente"<<endl;locate(2,17);cout<< "y debera pagar el doble de la apuesta a su oponente.";
+getch();
+cls();}
 
 int main()
 {
@@ -322,8 +405,8 @@ system("mode con: cols=80 lines=30");
     recuadro(26,10,29,10);
     system("COLOR 7F");
 
-    rlutil :: setBackgroundColor(rlutil::GREY);
-    rlutil :: setColor(rlutil:: GREEN);
+    setBackgroundColor(rlutil::GREY);
+    setColor(rlutil:: GREEN);
 
 locate(35,6);
     cout<<"CHINCHIRORIN"<<endl;
@@ -372,11 +455,20 @@ locate(33,12+y);
                 switch(y){
                     //SALIR
                 case 6:
+                    system("cls");
+                    recuadro(20,9,45,4);
+                     system("COLOR 7F");
+                     setBackgroundColor(rlutil::GREY);
+                    setColor(rlutil:: GREEN);
+
+                    gotoxy(23,10);
+                cout<<"GRACIAS POR JUGAR/CORREGIR NUESTRO JUEGO";
 
 
 
 
 
+                    getch();
 
                     cls();
                     return 0;
@@ -997,89 +1089,7 @@ cambiardado1=0;
 
                              case 3://INSTRUCCIONES
 
-                                 recuadro(1,1,79,29,cBLANCO,cNEGRO);
-                                 recuadro(1,1,79,3,cBLANCO,cNEGRO);
-                                 locate(35,2);
-                                 system("COLOR 7F");
-                                 setColor(GREEN);
-                                 cout<<" REGLAS";
-                                 locate(2,6);
-cout<<(char)254<<"Cada jugador tiene hasta un maximo de 2 tiradas para conseguir una puntuacion"<<endl;
-    locate(2,8);
-cout<<(char)254<<"Se deben lanzar los tres dados al mismo tiempo en el recipiente."<<endl;
-locate(2,10);
-/*cout<<(char)254<<"Si un dado sale del recipiente el jugador pierde automaticamente y debe "<<endl;
-locate(2,12);
-cout<<"pagar la cantidad de dinero apostada. A esto se le llama meada"<<endl;*/
-
-    locate(22,22);
-    cout<<"PRESIONE CUALQUIER TECLA PARA CONTINUAR"<<endl;
-    getch();
-    cls();
-
-                                 recuadro(1,1,79,29,cBLANCO,cNEGRO);
-                                 recuadro(1,1,79,3,cBLANCO,cNEGRO);
-                                 locate(35,2);
-                                 system("COLOR 7F");
-                                 setColor(GREEN);
-                                 cout<<"OBJETIVO";
-
-    locate(2,6);
-    cout<<(char)254<<"El objetivo del juego es conseguir que dos dados marquen el mismo numero"<<endl;locate(4,7);cout<<"El dado restante marcara la puntuacion del jugador."<<endl;
-    locate(2,9);
-    cout<<(char)254<<"Una vez realizadas las tiradas se compara la puntuacion de ambos jugadores"<<endl;locate(3,10);cout<<"y el que tenga la puntuacion mas alta gana la partida.";
-    locate(22,22);
-    cout<<"PRESIONE CUALQUIER TECLA PARA CONTINUAR"<<endl;
-    getch();
-    locate(2,12);
-    cout<<(char)254<<"Si ambos jugadores acaban con la misma puntuacion o no hacen ninguna "<<endl;
-    locate(2,13);
-    cout<<"puntuacion en todas sus tiradas es un empate y ninguno de los dos gana"<<endl;
-    locate(2,16);
-    cout<<(char)254<<"Ademas el dinero tiene que ser apostado de nuevo para otra partida.";
-
-    locate(22,22);
-    cout<<"PRESIONE CUALQUIER TECLA PARA CONTINUAR"<<endl;
-    getch();
-cls();
-
-
-
-                                 recuadro(1,1,79,29,cBLANCO,cNEGRO);
-                                 recuadro(1,1,79,3,cBLANCO,cNEGRO);
-                                 locate(33,2);
-                                 system("COLOR 7F");
-                                 setColor(GREEN);
-                                 cout<<"REGLAS ESPECIALES";
-
-
-
-locate(2,6);
-    cout<<(char)254<<"Si un jugador obtiene los tres dados del mismo numero(triple 2,3,4,5 o 6)"<<endl;locate(4,7);cout<< "ganara automaticamente la partida y obtendra tres veces la cantidad de"<<endl;locate(4,8);cout<< "dinero apostada originalmente.";
-    locate(22,22);
-    cout<<"PRESIONE CUALQUIER TECLA PARA CONTINUAR"<<endl;
-    getch();
-    locate(2,10);
-
-
-    cout<<(char)254<<"Sin embargo, si un jugador obtiene un 1 en los tres dados, pierde."<<endl;
-    locate(2,11);
-    cout<< "automaticamente y debera pagar el triple de la cantidad de dinero apostada"<<endl;locate(2,13);cout<< "a su oponente. Estas dos reglas especiales se llaman Tormenta."<<endl;
-      locate(22,22);
-    cout<<"PRESIONE CUALQUIER TECLA PARA CONTINUAR"<<endl;
-    locate(2,13);
-
-    cout<<(char)254<<"Por otra parte, si un jugador obtiene un 4-5-6 ganara de forma automatica,"<<endl;
-      locate(22,22);
-    cout<<"PRESIONE CUALQUIER TECLA PARA CONTINUAR"<<endl;
-    locate(2,14);
-    cout<<"ademas su rival debera pagarle el doble de lo apostado."<<endl;
-
-        getch();
-    locate(2,16);
-    cout<<(char)254<<"Por el contrario, si un jugador obtiene un 1-2-3 perdera automaticamente"<<endl;locate(2,17);cout<< "y debera pagar el doble de la apuesta a su oponente.";
-getch();
-cls();
+                           instrucciones();
 mn=false;
 
                                 break;
