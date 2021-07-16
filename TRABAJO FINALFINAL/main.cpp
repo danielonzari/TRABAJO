@@ -307,7 +307,7 @@ int main()
 {
 system("mode con: cols=80 lines=30");
  hidecursor();
-
+ int recu=0;
  int i,PrimerVariable,jugadores,p,x,nombre=0;
     int dado[2],dadoj2[2], puntuacionj1=0,puntuacionj2=0,otratirada,conservar,cambiardado1,cambiardado2,tam, salir=1,apuesta,apuesta2=0,ganador,variable1,variable2,empate=0,contador=0,triple1=0,triple1j2=0;
     char jugador1[100],jugador2[100],jugador3[100];
@@ -435,8 +435,13 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
     cout<<"INGRESE EL DADO "<<j+1<<" ;";
     cin>>dado[j];
     }
+
+
+
+
+
     system("cls");
-     recuadro(20,2,43,10,cBLANCO,cNEGRO);
+     recuadro(20,2,44,10,cBLANCO,cNEGRO);
     system("COLOR 7F");
     setColor(GREEN);
     locate(21,3);
@@ -446,17 +451,49 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
     locate(21,5);
     cout<< " ---------------------------------------- " <<endl;
 
-switch (*dado)
-{
-case 1 :
-    recuadro(4,1,8,4,cROJO_CLARO,cGRIS_CLARO);
-        gotoxy(8,3);
-        cout<<(char)4;
-    break;
+    for(int d=0;d<3;d++){
 
-default:
-    break;
-}
+        switch (dado[d])
+        {
+        case 1://dado1
+        recuadro(22+recu,6,8,4,cROJO,cGRIS_CLARO);
+        gotoxy(26+recu,8);
+        cout<<(char)4;
+        recu+=15;
+            break;
+        case 2://dado 2
+        recuadro(23+recu,6,8,4,cROJO,cGRIS_CLARO);
+        gotoxy(25+recu,8);
+        cout<<(char)4;
+        gotoxy(29+recu,8);
+        cout<<(char)4;
+        recu+=15;
+            break;
+            case 3://dado 3
+        recuadro(24+recu,6,8,4,cROJO,cGRIS_CLARO);
+        gotoxy(26+recu,7);
+        cout<<(char)4;
+        gotoxy(28+recu,8);
+        cout<<(char)4;
+        gotoxy(30+recu,9);
+        cout<<(char)4;
+        recu+=15;
+            break;
+
+
+
+
+
+
+
+        default:
+            break;
+        }
+
+
+
+    }
+
 /*
     for (i=0;i<=2;i++){
             locate(40,i+7);
