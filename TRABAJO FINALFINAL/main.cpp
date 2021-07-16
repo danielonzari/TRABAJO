@@ -11,6 +11,87 @@
 using namespace std;
 using namespace rlutil;
 #include "dados.h"
+
+
+void dados(int x,int recu){
+switch (x)
+{
+    case 1://dado1
+        recuadro(22+recu,6,8,4,cROJO,cGRIS_CLARO);
+        gotoxy(26+recu,8);
+        cout<<(char)4;
+
+            break;
+        case 2://dado 2
+        recuadro(22+recu,6,8,4,cROJO,cGRIS_CLARO);
+        gotoxy(24+recu,8);
+        cout<<(char)4;
+        gotoxy(28+recu,8);
+        cout<<(char)4;
+
+            break;
+            case 3://dado 3
+        recuadro(22+recu,6,8,4,cROJO,cGRIS_CLARO);
+        gotoxy(24+recu,7);
+        cout<<(char)4;
+        gotoxy(26+recu,8);
+        cout<<(char)4;
+        gotoxy(28+recu,9);
+        cout<<(char)4;
+
+            break;
+            case 4://dado 4
+        recuadro(22+recu,6,8,4,cROJO,cGRIS_CLARO);
+        gotoxy(24+recu,7);
+        cout<<(char)4;
+        gotoxy(28+recu,7);
+        cout<<(char)4;
+        gotoxy(28+recu,9);
+        cout<<(char)4;
+        gotoxy(24+recu,9);
+        cout<<(char)4;
+
+            break;
+             case 5://dado 5
+        recuadro(22+recu,6,8,4,cROJO,cGRIS_CLARO);
+        gotoxy(24+recu,7);
+        cout<<(char)4;
+        gotoxy(28+recu,7);
+        cout<<(char)4;
+         gotoxy(26+recu,8);
+        cout<<(char)4;
+        gotoxy(28+recu,9);
+        cout<<(char)4;
+        gotoxy(24+recu,9);
+        cout<<(char)4;
+
+            break;
+    case 6://dado 6
+        recuadro(22+recu,6,8,4,cROJO,cGRIS_CLARO);
+        gotoxy(24+recu,7);
+        cout<<(char)4;
+        gotoxy(28+recu,7);
+        cout<<(char)4;
+         gotoxy(24+recu,8);
+        cout<<(char)4;
+        gotoxy(28+recu,9);
+        cout<<(char)4;
+        gotoxy(28+recu,8);
+        cout<<(char)4;
+        gotoxy(24+recu,9);
+        cout<<(char)4;
+
+            break;
+
+
+
+default:
+    break;
+}
+
+
+
+}
 void comentariojugador1(){
                                         locate(7,16);
                                         cout<<"Tu objetivo es superar la puntuacion de 4 y no perder el dinero  ";
@@ -385,249 +466,8 @@ locate(2,6);
     cout<<(char)254<<"Por el contrario, si un jugador obtiene un 1-2-3 perdera automaticamente"<<endl;locate(2,17);cout<< "y debera pagar el doble de la apuesta a su oponente.";
 getch();
 cls();}
-
-int main()
-{
-system("mode con: cols=80 lines=30");
- hidecursor();
- int recu=0;
- int i,PrimerVariable,jugadores,p,x,nombre=0;
-    int dado[2],dadoj2[2], puntuacionj1=0,puntuacionj2=0,otratirada,conservar,cambiardado1,cambiardado2,tam, salir=1,apuesta,apuesta2=0,ganador,variable1,variable2,empate=0,contador=0,triple1=0,triple1j2=0;
-    char jugador1[100],jugador2[100],jugador3[100];
-
-    bool mn=true;
-    int key,y=0;
-
-
-    do{
-    SetConsoleTitle("Hola");
-    recuadro(20,4,41,4);
-    recuadro(26,10,29,10);
-    system("COLOR 7F");
-
-    setBackgroundColor(rlutil::GREY);
-    setColor(rlutil:: GREEN);
-
-locate(35,6);
-    cout<<"CHINCHIRORIN"<<endl;
-    locate(34,12);
-    cout<<"  NUEVO JUEGO "<<endl;
-        locate(34,15);
-    cout<<" INSTRUCCIONES"<<endl;
- locate(34,15);
-
-    cout<<" INSTRUCCIONES"<<endl;
-     locate(34,18);
-
-    cout<<"     SALIR    "<<endl;
-
-do{
-
-mn=true;
-
-locate(33,12+y);
-        cout<<(char)219;
-
-
-    key=getkey();
-
-    switch (key)
-    {
-        case 15://abajo
-        locate(33,12+y);
-        cout<<"  ";
-        y+=3;
-        if(y>6){
-            y=0;
-        }
-
-        break;
-        case 14://arriba
-
-         locate(33,12+y);
-        cout<<"  ";
-        y-=3;
-        if(y<0){
-        y=6;
-        }
-        break;
-        case 1://enter
-                switch(y){
-                    //SALIR
-                case 6:
-                    system("cls");
-                    recuadro(20,9,45,4);
-                     system("COLOR 7F");
-                     setBackgroundColor(rlutil::GREY);
-                    setColor(rlutil:: GREEN);
-
-                    gotoxy(23,10);
-                cout<<"GRACIAS POR JUGAR/CORREGIR NUESTRO JUEGO";
-
-
-
-
-
-                    getch();
-
-                    cls();
-                    return 0;
-                    break;
-                    case 0://NUEVO JUEGO
-
-                        cls();
-
-                         recuadro(20,4,41,3,cBLANCO,cNEGRO);
-                         recuadro(26,10,29,10,cBLANCO,cNEGRO);
-                         system("COLOR 7F");
-                         locate(39,5);
-                         setColor(GREEN);
-                         cout<<"MODO"<<endl;
-                         locate(35,12);
-                         cout<<"1 Jugador"<<endl;
-                         locate(35,15);
-                         cout<<"2 Jugadores"<<endl;
-                          locate(35,18);
-                         cout<<"Simulador"<<endl;
-                         do
-                         {
-
-                            locate(33,12+y);
-                            cout<<(char)219;
-                             key=getkey();
-
-                             switch (key)
-                             {
-                            case 1://ENTER
-                                    switch(y){
-                                    case 6://SIMULADOR
-
-                                        menu_unico_jugador(jugador1,"SIMULADOR",1);
-
-                                        locate(30,20);
-                                        cambiardado1=0;
-                                         cambiardado2=0;
-    system("cls");
-    interfaz1();
-    recuadro(20,5,43,2,cBLANCO,cNEGRO);
-recuadro(20,8,43,5,cBLANCO,cNEGRO);
-
-
-                                        system("COLOR 7F");
-                                        setColor(GREEN);
-                                            locate(36,6);
-    cout<<"TU TURNO;"<<jugador1;
-    locate(35,2);
-    cout<<" SIMULADOR ";
-
-
-
-    for(int j=0;j<3;j++){
-    locate(23,10+1);
-    cout<<"INGRESE EL DADO "<<j+1<<" ;";
-    cin>>dado[j];
-    }
-
-
-
-
-
-    system("cls");
-     recuadro(19,2,44,10,cBLANCO,cNEGRO);
-    system("COLOR 7F");
-    setColor(GREEN);
-    locate(21,3);
-    cout<< " ---------------------------------------- " <<endl;
-    locate(35,4);
-    cout<<"TUS DADOS SON: "<<endl;
-    locate(21,5);
-    cout<< " ---------------------------------------- " <<endl;
-
-    for(int d=0;d<=2;d++){
-
-        switch (dado[d])
-        {
-        case 1://dado1
-        recuadro(22+recu,6,8,4,cROJO,cGRIS_CLARO);
-        gotoxy(26+recu,8);
-        cout<<(char)4;
-        recu+=15;
-            break;
-        case 2://dado 2
-        recuadro(22+recu,6,8,4,cROJO,cGRIS_CLARO);
-        gotoxy(24+recu,8);
-        cout<<(char)4;
-        gotoxy(28+recu,8);
-        cout<<(char)4;
-        recu+=15;
-            break;
-            case 3://dado 3
-        recuadro(22+recu,6,8,4,cROJO,cGRIS_CLARO);
-        gotoxy(24+recu,7);
-        cout<<(char)4;
-        gotoxy(26+recu,8);
-        cout<<(char)4;
-        gotoxy(28+recu,9);
-        cout<<(char)4;
-        recu+=15;
-            break;
-            case 4://dado 4
-        recuadro(22+recu,6,8,4,cROJO,cGRIS_CLARO);
-        gotoxy(24+recu,7);
-        cout<<(char)4;
-        gotoxy(28+recu,7);
-        cout<<(char)4;
-        gotoxy(28+recu,9);
-        cout<<(char)4;
-        gotoxy(24+recu,9);
-        cout<<(char)4;
-        recu+=15;
-            break;
-             case 5://dado 5
-        recuadro(22+recu,6,8,4,cROJO,cGRIS_CLARO);
-        gotoxy(24+recu,7);
-        cout<<(char)4;
-        gotoxy(28+recu,7);
-        cout<<(char)4;
-         gotoxy(26+recu,8);
-        cout<<(char)4;
-        gotoxy(28+recu,9);
-        cout<<(char)4;
-        gotoxy(24+recu,9);
-        cout<<(char)4;
-        recu+=15;
-            break;
-    case 6://dado 6
-        recuadro(22+recu,6,8,4,cROJO,cGRIS_CLARO);
-        gotoxy(24+recu,7);
-        cout<<(char)4;
-        gotoxy(28+recu,7);
-        cout<<(char)4;
-         gotoxy(24+recu,8);
-        cout<<(char)4;
-        gotoxy(28+recu,9);
-        cout<<(char)4;
-        gotoxy(28+recu,8);
-        cout<<(char)4;
-        gotoxy(24+recu,9);
-        cout<<(char)4;
-        recu+=15;
-            break;
-
-        default:
-            break;
-        }
-
-
-
-    }
-
-/*
-    for (i=0;i<=2;i++){
-            locate(40,i+7);
-    cout<<"dado "<<i+1<<": "<<dado[i]<<endl;
-    }*/
-    locate(21,14);
+void cambiardados(int dado[2],int otratirada,int conservar,int cambiardado1,int cambiardado2,char jugador1[100]){
+ locate(21,14);
     cout<<"Desea realizar una segunda tirada? 1(si) 2(no)"<<endl;
     locate(43,15);
     cin>>otratirada;
@@ -806,6 +646,208 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
     }
         }
 
+
+}
+int main()
+{
+system("mode con: cols=80 lines=30");
+ hidecursor();
+ int recu=0;
+ int i,PrimerVariable,jugadores,p,x,nombre=0;
+    int dado[2],dadoj2[2], puntuacionj1=0,puntuacionj2=0,otratirada,conservar,cambiardado1,cambiardado2,tam, salir=1,apuesta,apuesta2=0,ganador,variable1,variable2,empate=0,contador=0,triple1=0,triple1j2=0;
+    char jugador1[100],jugador2[100],jugador3[100];
+
+    bool mn=true;
+    int key,y=0;
+
+
+    do{
+    SetConsoleTitle("Hola");
+    recuadro(20,4,41,4);
+    recuadro(26,10,29,10);
+    system("COLOR 7F");
+
+    setBackgroundColor(rlutil::GREY);
+    setColor(rlutil:: GREEN);
+
+locate(35,6);
+    cout<<"CHINCHIRORIN"<<endl;
+    locate(34,12);
+    cout<<"  NUEVO JUEGO "<<endl;
+        locate(34,15);
+    cout<<" INSTRUCCIONES"<<endl;
+ locate(34,15);
+
+    cout<<" INSTRUCCIONES"<<endl;
+     locate(34,18);
+
+    cout<<"     SALIR    "<<endl;
+
+do{
+
+mn=true;
+
+locate(33,12+y);
+        cout<<(char)219;
+
+
+    key=getkey();
+
+    switch (key)
+    {
+        case 15://abajo
+        locate(33,12+y);
+        cout<<"  ";
+        y+=3;
+        if(y>6){
+            y=0;
+        }
+
+        break;
+        case 14://arriba
+
+         locate(33,12+y);
+        cout<<"  ";
+        y-=3;
+        if(y<0){
+        y=6;
+        }
+        break;
+        case 1://enter
+                switch(y){
+                    //SALIR
+                case 6:
+                    system("cls");
+                    recuadro(20,9,45,4);
+                     system("COLOR 7F");
+                     setBackgroundColor(rlutil::GREY);
+                    setColor(rlutil:: GREEN);
+
+                    gotoxy(23,10);
+                cout<<"GRACIAS POR JUGAR/CORREGIR NUESTRO JUEGO";
+
+
+
+
+
+                    getch();
+
+                    cls();
+                    return 0;
+                    break;
+                    case 0://NUEVO JUEGO
+
+                        cls();
+
+                         recuadro(20,4,41,3,cBLANCO,cNEGRO);
+                         recuadro(26,10,29,10,cBLANCO,cNEGRO);
+                         system("COLOR 7F");
+                         locate(39,5);
+                         setColor(GREEN);
+                         cout<<"MODO"<<endl;
+                         locate(35,12);
+                         cout<<"1 Jugador"<<endl;
+                         locate(35,15);
+                         cout<<"2 Jugadores"<<endl;
+                          locate(35,18);
+                         cout<<"Simulador"<<endl;
+                         do
+                         {
+
+                            locate(33,12+y);
+                            cout<<(char)219;
+                             key=getkey();
+
+                             switch (key)
+                             {
+                            case 1://ENTER
+                                    switch(y){
+                                    case 6://SIMULADOR
+
+                                        menu_unico_jugador(jugador1,"SIMULADOR",1);
+
+                                        locate(30,20);
+                                        cambiardado1=0;
+                                         cambiardado2=0;
+    system("cls");
+    interfaz1();
+    recuadro(20,5,43,2,cBLANCO,cNEGRO);
+recuadro(20,8,43,5,cBLANCO,cNEGRO);
+
+
+                                        system("COLOR 7F");
+                                        setColor(GREEN);
+                                            locate(36,6);
+    cout<<"TU TURNO;"<<jugador1;
+    locate(35,2);
+    cout<<" SIMULADOR ";
+
+
+
+    for(int j=0;j<3;j++){
+    locate(23,10+1);
+    cout<<"INGRESE EL DADO "<<j+1<<" ;";
+    cin>>dado[j];
+    }
+
+
+
+
+
+    system("cls");
+     recuadro(19,2,44,10,cBLANCO,cNEGRO);
+    system("COLOR 7F");
+    setColor(GREEN);
+    locate(21,3);
+    cout<< " ---------------------------------------- " <<endl;
+    locate(35,4);
+    cout<<"TUS DADOS SON: "<<endl;
+    locate(21,5);
+    cout<< " ---------------------------------------- " <<endl;
+
+    for(int d=0;d<=2;d++){
+        switch (dado[d])
+        {
+        case 1://dado1
+         dados(1,recu);
+        recu+=15;
+            break;
+        case 2://dado 2
+       dados(2,recu);
+        recu+=15;
+            break;
+            case 3://dado 3
+      dados(3,recu);
+        recu+=15;
+            break;
+            case 4://dado 4
+        dados(4,recu);
+        recu+=15;
+            break;
+             case 5://dado 5
+        dados(5,recu);
+        recu+=15;
+            break;
+    case 6://dado 6
+      dados(6,recu);
+        recu+=15;
+            break;
+
+        default:
+            break;
+        }
+
+
+
+    }recu=0;
+
+/*
+    for (i=0;i<=2;i++){
+            locate(40,i+7);
+    cout<<"dado "<<i+1<<": "<<dado[i]<<endl;
+    }*/
+    cambiardados(dado,otratirada,conservar,cambiardado1,cambiardado2,jugador1);
+
         system("cls");
     recuadro(22,2,43,10,cBLANCO,cNEGRO);
     system("COLOR 7F");
@@ -816,12 +858,54 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
     cout<<"turno de: "<< jugador1<< endl;
     locate(23,5);
     cout<< " ---------------------------------------- " <<endl;
+ system("cls");
+     recuadro(19,2,44,10,cBLANCO,cNEGRO);
+    system("COLOR 7F");
+    setColor(GREEN);
+    locate(21,3);
+    cout<< " ---------------------------------------- " <<endl;
+    locate(35,4);
+    cout<<"TUS DADOS SON: "<<endl;
+    locate(21,5);
+    cout<< " ---------------------------------------- " <<endl;
+
+    for(int d=0;d<=2;d++){
+        switch (dado[d])
+        {
+        case 1://dado1
+         dados(1,recu);
+        recu+=15;
+            break;
+        case 2://dado 2
+       dados(2,recu);
+        recu+=15;
+            break;
+            case 3://dado 3
+      dados(3,recu);
+        recu+=15;
+            break;
+            case 4://dado 4
+        dados(4,recu);
+        recu+=15;
+            break;
+             case 5://dado 5
+        dados(5,recu);
+        recu+=15;
+            break;
+    case 6://dado 6
+      dados(6,recu);
+        recu+=15;
+            break;
+
+        default:
+            break;
+        }
 
 
-        for (i=0;i<=2;i++){
-                 locate(40,i+7);
-    cout<<"dado "<<i+1<<": "<<dado[i]<<endl;
-    }
+
+    }recu=0;
+
+
     diferentes_resultados(dado,puntuacionj1,jugador1);
 
 
