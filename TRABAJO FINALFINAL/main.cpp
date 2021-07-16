@@ -653,7 +653,7 @@ int main()
 system("mode con: cols=80 lines=30");
  hidecursor();
  int recu=0;
- int i,PrimerVariable,jugadores,p,x,nombre=0;
+ int i,PrimerVariable,jugadores,p,x,nombre=0,nota;
     int dado[2],dadoj2[2], puntuacionj1=0,puntuacionj2=0,otratirada,conservar,cambiardado1,cambiardado2,tam, salir=1,apuesta,apuesta2=0,ganador,variable1,variable2,empate=0,contador=0,triple1=0,triple1j2=0;
     char jugador1[100],jugador2[100],jugador3[100];
 
@@ -719,18 +719,16 @@ locate(33,12+y);
                 case 6:
                     system("cls");
                     recuadro(20,9,45,4);
+                    recuadro(20,14,45,2);
                      system("COLOR 7F");
                      setBackgroundColor(rlutil::GREY);
                     setColor(rlutil:: GREEN);
 
                     gotoxy(23,10);
                 cout<<"GRACIAS POR JUGAR/CORREGIR NUESTRO JUEGO";
-
-
-
-
-
-                    getch();
+                gotoxy(25,15);
+                cout<<"INSERTE NOTA DE EVALUACION: ";
+                cin>>nota;
 
                     cls();
                     return 0;
