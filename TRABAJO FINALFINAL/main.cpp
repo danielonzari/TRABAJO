@@ -533,7 +533,7 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
 
 
     system("cls");
-     recuadro(20,2,44,10,cBLANCO,cNEGRO);
+     recuadro(19,2,44,10,cBLANCO,cNEGRO);
     system("COLOR 7F");
     setColor(GREEN);
     locate(21,3);
@@ -554,29 +554,65 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
         recu+=15;
             break;
         case 2://dado 2
-        recuadro(23+recu,6,8,4,cROJO,cGRIS_CLARO);
-        gotoxy(25+recu,8);
+        recuadro(22+recu,6,8,4,cROJO,cGRIS_CLARO);
+        gotoxy(24+recu,8);
         cout<<(char)4;
-        gotoxy(29+recu,8);
+        gotoxy(28+recu,8);
         cout<<(char)4;
         recu+=15;
             break;
             case 3://dado 3
-        recuadro(24+recu,6,8,4,cROJO,cGRIS_CLARO);
-        gotoxy(26+recu,7);
+        recuadro(22+recu,6,8,4,cROJO,cGRIS_CLARO);
+        gotoxy(24+recu,7);
         cout<<(char)4;
-        gotoxy(28+recu,8);
+        gotoxy(26+recu,8);
         cout<<(char)4;
-        gotoxy(30+recu,9);
+        gotoxy(28+recu,9);
         cout<<(char)4;
         recu+=15;
             break;
-
-
-
-
-
-
+            case 4://dado 4
+        recuadro(22+recu,6,8,4,cROJO,cGRIS_CLARO);
+        gotoxy(24+recu,7);
+        cout<<(char)4;
+        gotoxy(28+recu,7);
+        cout<<(char)4;
+        gotoxy(28+recu,9);
+        cout<<(char)4;
+        gotoxy(24+recu,9);
+        cout<<(char)4;
+        recu+=15;
+            break;
+             case 5://dado 5
+        recuadro(22+recu,6,8,4,cROJO,cGRIS_CLARO);
+        gotoxy(24+recu,7);
+        cout<<(char)4;
+        gotoxy(28+recu,7);
+        cout<<(char)4;
+         gotoxy(26+recu,8);
+        cout<<(char)4;
+        gotoxy(28+recu,9);
+        cout<<(char)4;
+        gotoxy(24+recu,9);
+        cout<<(char)4;
+        recu+=15;
+            break;
+    case 6://dado 6
+        recuadro(22+recu,6,8,4,cROJO,cGRIS_CLARO);
+        gotoxy(24+recu,7);
+        cout<<(char)4;
+        gotoxy(28+recu,7);
+        cout<<(char)4;
+         gotoxy(24+recu,8);
+        cout<<(char)4;
+        gotoxy(28+recu,9);
+        cout<<(char)4;
+        gotoxy(28+recu,8);
+        cout<<(char)4;
+        gotoxy(24+recu,9);
+        cout<<(char)4;
+        recu+=15;
+            break;
 
         default:
             break;
