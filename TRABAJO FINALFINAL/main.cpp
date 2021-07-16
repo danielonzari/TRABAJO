@@ -543,7 +543,7 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
     locate(21,5);
     cout<< " ---------------------------------------- " <<endl;
 
-    for(int d=0;d<3;d++){
+    for(int d=0;d<=2;d++){
 
         switch (dado[d])
         {
