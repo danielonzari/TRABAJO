@@ -372,7 +372,7 @@
 	<sys/types.h>
 	<sys/time.h>
 
-1626299267 source:d:\documents\utn\laboratorio de computacion\trabajo\trabajo finalfinal\main.cpp
+1626389980 source:d:\documents\utn\laboratorio de computacion\trabajo\trabajo finalfinal\main.cpp
 	<iostream>
 	<stdlib.h>
 	"rlutil.h"
@@ -381,6 +381,7 @@
 	"funciones2.h"
 	<conio.h>
 	<windows.h>
+	<string.h>
 	"dados.h"
 
 1626211704 d:\documents\utn\laboratorio de computacion\trabajo\trabajo finalfinal\funciones.h
