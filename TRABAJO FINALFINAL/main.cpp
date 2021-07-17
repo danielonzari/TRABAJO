@@ -111,7 +111,7 @@ void interfaz1(){
 recuadro(1,1,79,29,cNEGRO,cGRIS_CLARO);
 recuadro(1,1,79,3,cNEGRO,cGRIS_CLARO);
 }
-void diferentes_resultados (int dados[2],int puntuacion,char jugador[99]){
+void diferentes_resultados (int dados[2],int puntuacion,char jugador[99],int& apuesta, int& apuesta2){
     if( (dados[0]==1) && (dados[1]==1) && (dados[2]==1) ){
             locate(35,13);
         cout<<"Realizaste triple 1";
@@ -135,12 +135,6 @@ void diferentes_resultados (int dados[2],int puntuacion,char jugador[99]){
     locate(20,13);
     cout<<"Felicidades usted saco un 4,5,6 gano instantaneamente";
     puntuacion=100;
-    }
-    else if ((dados[0]==0) || (dados[1]==0) || (dados[2]==0))
-    {
-        locate(24,13);
-        cout << "Perdiste a esto se lo llama 'meada'" << endl;
-
     }
     else if (dados[0]==dados[1])
     {   if(dados[2]==1){ puntuacion=0;
@@ -178,6 +172,13 @@ void diferentes_resultados (int dados[2],int puntuacion,char jugador[99]){
         }
 
     }
+    if(puntuacion==-2 || puntuacion==0){apuesta2=apuesta*-2;}
+    else if (puntuacion==100000){apuesta2=apuesta*4;}
+    else if (puntuacion==100){apuesta2=apuesta*3;}
+    else if(puntuacion<4){apuesta2=apuesta;}
+    else if(puntuacion!=100 && puntuacion>=4 && puntuacion!=100000){
+        apuesta2=apuesta*2;
+    }
     locate(25,25);
     cout<<"PRESIONE CUALQUIER TECLA PARA SALIR"<<endl;
     locate(26,8); //aca
@@ -188,23 +189,36 @@ void diferentes_resultados (int dados[2],int puntuacion,char jugador[99]){
     setColor(GREEN);
     locate(23,3);
      cout<< " ---------------------------------------- " <<endl;
-    locate(23,3);
-    cout << " --------------------------------------- "<< endl;
+    locate(23,5);
+    cout << " ---------------------------------------- "<< endl;
     if (puntuacion>=4) {
-        locate(30,5);
-        cout << " ----- G A N A S T E   ----- " << endl;
+        locate(35,4);
+        cout << "  G A N A S T E    " << endl;
+        locate(30,10);
+    cout<<"USTED RECIBIO UN TOTAL DE "<<apuesta2<<"$";
+    locate(35,11);
+    cout<<"PAGATE EL ASADO ";
+
+
     }
     else{
-        locate(30,5);
-        cout << " ----- P E R D I S T E ----- " << endl;
+        locate(35,4);
+        cout << "  P E R D I S T E  " << endl;
+         locate(30,10);
+    cout<<"USTED PERDIO UN TOTAL DE "<<apuesta2<<"$";
+    locate(35,11);
+    cout<<"LA PROXIMA SERA";
+
     }
+
+
 
     locate(26,8);
     cout<<"PRESIONE CUALQUIER TECLA PARA SALIR"<<endl;
     getch();
 
 }
-void menu_unico_jugador (char jugador[100],const char *texto,int y,int apuesta){
+void menu_unico_jugador (char jugador[100],const char *texto,int y,int& apuesta,int saldoiniciall,int saldoactual){
                                  system("cls");
 
                                         interfaz1();
@@ -235,9 +249,26 @@ void menu_unico_jugador (char jugador[100],const char *texto,int y,int apuesta){
 
                                         cout<<"Nombre del jugador : ";
                                         cin>>jugador;
+                                        locate(27,13);
+                                        cout<<"Ingrese saldo inicial: ";
+                                        cin>>saldoiniciall;
                                         locate(27,14);
-                                        cout<<"Ingrese la apuesta: ";
+                                        cout<<"Ingrese apuesta: ";
                                         cin>>apuesta;
+
+                                        while (apuesta>saldoiniciall){
+                                        locate(20,17);
+                                        cout<<"Eso no es posible, por favor, ingresar un valor logico";
+                                        locate(27,14);
+                                        cout<<"Ingrese apuesta: ";
+                                        locate(44,14);
+                                        cin>>apuesta;
+                                        saldoactual=saldoiniciall-apuesta;
+                                        }
+
+
+
+
 
                                         locate(38,26);
                                         cout<<"PERFECTO"<<endl;
@@ -657,7 +688,7 @@ int main()
 system("mode con: cols=80 lines=30");
  hidecursor();
  int recu=0;
- int i,PrimerVariable,jugadores,p,x,nombre=0,nota;
+ int i,PrimerVariable,jugadores,p,x,nombre=0,nota,saldoinicial,saldoactual;
     int dado[2],dadoj2[2], puntuacionj1=0,puntuacionj2=0,otratirada,conservar,cambiardado1,cambiardado2,tam, salir=1,apuesta,apuesta2=0,ganador,variable1,variable2,empate=0,contador=0,triple1=0,triple1j2=0;
     char jugador1[100],jugador2[100],jugador3[100];
 
@@ -766,7 +797,7 @@ locate(33,12+y);
                                     switch(y){
                                     case 6://SIMULADOR
 
-                                        menu_unico_jugador(jugador1,"SIMULADOR",1,apuesta);
+                                        menu_unico_jugador(jugador1,"SIMULADOR",1,apuesta,saldoinicial,saldoactual);
 
                                         locate(30,20);
                                         cambiardado1=0;
@@ -910,7 +941,7 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
     }recu=0;
 
 
-    diferentes_resultados(dado,puntuacionj1,jugador1);
+    diferentes_resultados(dado,puntuacionj1,jugador1,apuesta,apuesta2);
 
 
                                         //system("pause");//TECLEAR PARA PROCEDER A LA SIGUIENTE LINEA
@@ -927,7 +958,7 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
                                     case 0://JUGADOR 1
                                      cls();
                                      system("cls");
-                                        menu_unico_jugador(jugador1,"JUGADOR 1",2,apuesta);
+                                        menu_unico_jugador(jugador1,"JUGADOR 1",2,apuesta,saldoinicial,saldoactual);
                                         locate(30,20);
 
     cambiardado1=0;
@@ -967,7 +998,7 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
                  locate(40,i+7);
     cout<<"dado "<<i+1<<": "<<dado[i]<<endl;
     }
-    diferentes_resultados(dado,puntuacionj1,jugador1);
+    diferentes_resultados(dado,puntuacionj1,jugador1,apuesta,apuesta2);
 
                                         //system("pause");//TECLEAR PARA PROCEDER A LA SIGUIENTE LINEA
                                         cls();
