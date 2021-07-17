@@ -111,7 +111,7 @@ void interfaz1(){
 recuadro(1,1,79,29,cNEGRO,cGRIS_CLARO);
 recuadro(1,1,79,3,cNEGRO,cGRIS_CLARO);
 }
-void diferentes_resultados (int dados[2],int puntuacion,char jugador[99],int& apuesta, int& apuesta2, int&seguirjugandoo,int& saldoactual){
+void diferentes_resultados (int dados[2],int puntuacion,char jugador[99],int& apuesta, int& apuesta2, int&seguirjugandoo,int& saldoinical){
     if( (dados[0]==1) && (dados[1]==1) && (dados[2]==1) ){
             locate(35,13);
         cout<<"Realizaste triple 1";
@@ -197,7 +197,7 @@ void diferentes_resultados (int dados[2],int puntuacion,char jugador[99],int& ap
         cout << "  G A N A S T E    " << endl;
         locate(30,10);
     cout<<"USTED RECIBIO UN TOTAL DE "<<apuesta2<<"$";
-saldoactual=saldoactual+apuesta2;
+    saldoinical=saldoinical+apuesta2;
 
 
     }
@@ -206,21 +206,25 @@ saldoactual=saldoactual+apuesta2;
         cout << "  P E R D I S T E  " << endl;
          locate(30,10);
     cout<<"USTED PERDIO UN TOTAL DE "<<apuesta2<<"$";
-    saldoactual=saldoactual-apuesta2;
+    saldoinical=saldoinical+apuesta2;
     locate(35,11);
     cout<<"LA PROXIMA SERA";
 
     }
 
 
-        if(saldoactual<=0){
+        if(saldoinical<=0){
 
             cout<<"Ya no posees dinero";
+            seguirjugandoo=0;
+        }else{
+         locate(20,15);
+         cout<<"presione 1 para jugar otra ronda/0 para salir: ";
+         cin>>seguirjugandoo;
         }
          locate(20,15);
 
-        cout<<"presione 1 para jugar otra ronda/0 para salir: ";
-        cin>>seguirjugandoo;
+
 
     locate(26,8);
     cout<<"PRESIONE CUALQUIER TECLA PARA SALIR"<<endl;
@@ -881,7 +885,7 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
     corte=0;
     }
     }
-    saldoactual=saldoinicial-apuesta;
+
 
          interfaz1();
     recuadro(20,5,43,2,cBLANCO,cNEGRO);
@@ -898,7 +902,7 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
 
     locate(32,16);
 
-    cout<<"Saldo actual: "<<saldoactual<<"$";
+    cout<<"Saldo actual: "<<saldoinicial<<"$";
 
     ingresardados(dado);
 
@@ -942,7 +946,7 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
     cout<< " ---------------------------------------- " <<endl;
     dados(dado,recu);
 
-    diferentes_resultados(dado,puntuacionj1,jugador1,apuesta,apuesta2,seguirjugando,saldoactual);
+    diferentes_resultados(dado,puntuacionj1,jugador1,apuesta,apuesta2,seguirjugando,saldoinicial);
 
 }
 
