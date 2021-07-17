@@ -257,20 +257,15 @@ void menu_unico_jugador (char jugador[100],const char *texto,int y,int& apuesta,
                                         cin>>apuesta;
 
                                         while (apuesta>saldoiniciall){
-                                        locate(23,17);
-                                        setColor(RED);
-                                        cout<<"Ingresar valor menor o igual a"<<"("<<saldoiniciall<<"$)";
-                                        setColor(GREEN);
+                                        locate(20,17);
+                                        cout<<"Eso no es posible, por favor, ingresar un valor logico";
                                         locate(27,14);
                                         cout<<"Ingrese apuesta: ";
-                                        locate(44,14);
-                                         cout<<"   ";
                                         locate(44,14);
                                         cin>>apuesta;
                                         saldoactual=saldoiniciall-apuesta;
                                         }
-                                        locate(23,17);
-                                        cout<<"                                                       ";
+
 
 
 
