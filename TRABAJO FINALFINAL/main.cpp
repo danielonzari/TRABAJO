@@ -100,10 +100,11 @@ void comentariojugador1(){
 
 }
 void comentariosimulador(){
-                                        locate(7,19);
-                                        cout<<"En este modo podras indicar el valor de los 3 dados para evaluar ";
                                         locate(7,20);
-                                        cout<<"el funcionamiento";
+                                        cout<<"En este modo podras indicar el valor de los 3 dados para evaluar ";
+                                        locate(7,21);
+                                        cout<<"el funcionamiento y determinar la salida de valores (dinero)";
+
 
 }
 
