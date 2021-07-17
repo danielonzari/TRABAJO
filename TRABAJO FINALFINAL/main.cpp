@@ -197,7 +197,7 @@ void diferentes_resultados (int dados[2],int puntuacion,char jugador[99],int& ap
         cout << "  G A N A S T E    " << endl;
         locate(30,10);
     cout<<"USTED RECIBIO UN TOTAL DE "<<apuesta2<<"$";
-
+saldoactual=saldoactual+apuesta2;
 
 
     }
@@ -206,6 +206,7 @@ void diferentes_resultados (int dados[2],int puntuacion,char jugador[99],int& ap
         cout << "  P E R D I S T E  " << endl;
          locate(30,10);
     cout<<"USTED PERDIO UN TOTAL DE "<<apuesta2<<"$";
+    saldoactual=saldoactual-apuesta2;
     locate(35,11);
     cout<<"LA PROXIMA SERA";
 
