@@ -111,7 +111,7 @@ void interfaz1(){
 recuadro(1,1,79,29,cNEGRO,cGRIS_CLARO);
 recuadro(1,1,79,3,cNEGRO,cGRIS_CLARO);
 }
-void diferentes_resultados (int dados[2],int puntuacion,char jugador[99],int& apuesta, int& apuesta2, int&seguirjugandoo){
+void diferentes_resultados (int dados[2],int puntuacion,char jugador[99],int& apuesta, int& apuesta2, int&seguirjugandoo,int& saldoactual){
     if( (dados[0]==1) && (dados[1]==1) && (dados[2]==1) ){
             locate(35,13);
         cout<<"Realizaste triple 1";
@@ -210,7 +210,14 @@ void diferentes_resultados (int dados[2],int puntuacion,char jugador[99],int& ap
     cout<<"LA PROXIMA SERA";
 
     }
-        locate(20,15);
+
+
+        if(saldoactual<=0){
+
+            cout<<"Ya no posees dinero";
+        }
+         locate(20,15);
+
         cout<<"presione 1 para jugar otra ronda/0 para salir: ";
         cin>>seguirjugandoo;
 
@@ -674,11 +681,61 @@ void cambiardados(int dado[2],int otratirada,int conservar,int cambiardado1,int 
 
 
 }
+void dados(int dado[2], int& recu){
+
+ for(int d=0;d<=2;d++){
+
+        switch (dado[d])
+        {
+        case 1://dado1
+         dados(1,recu);
+        recu+=15;
+            break;
+        case 2://dado 2
+       dados(2,recu);
+        recu+=15;
+            break;
+            case 3://dado 3
+      dados(3,recu);
+        recu+=15;
+            break;
+            case 4://dado 4
+        dados(4,recu);
+        recu+=15;
+            break;
+             case 5://dado 5
+        dados(5,recu);
+        recu+=15;
+            break;
+    case 6://dado 6
+      dados(6,recu);
+        recu+=15;
+            break;
+
+        default:
+            break;
+        }
+
+
+
+    }
+
+recu=0;
+}
+void ingresardados(int dado[2]){
+    for(int j=0;j<3;j++){
+    locate(23,8+j+1);
+    cout<<"INGRESE EL DADO "<<j+1<<" ;";
+    cin>>dado[j];
+
+
+    }
+}
 int main()
 {
 system("mode con: cols=80 lines=30");
  hidecursor();
- int recu=0;
+ int recu=0,corte=1;
  int i,PrimerVariable,jugadores,p,x,nombre=0,nota,saldoinicial,saldoactual,seguirjugando=5;
     int dado[2],dadoj2[2], puntuacionj1=0,puntuacionj2=0,otratirada,conservar,cambiardado1,cambiardado2,tam, salir=1,apuesta,apuesta2=0,ganador,variable1,variable2,empate=0,contador=0,triple1=0,triple1j2=0;
     char jugador1[100],jugador2[100],jugador3[100];
@@ -805,36 +862,30 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
     cout<<"TU TURNO;"<<jugador1;
     locate(35,2);
     cout<<" SIMULADOR ";
-    locate(30,14);
-    cout<<"Ingrese apuesta: ";
+    while (corte!=0){
+        locate(22,9);
+    cout<<"SALDO ACTUAL : "<<saldoinicial<<"$";
+    locate(22,12);
+    cout<<"INGRESE APUESTA :";
     cin>>apuesta;
-    if(apuesta<=saldoinicial){saldoactual=saldoinicial-apuesta;}
-     while (apuesta>saldoinicial){system("cls");
-                                        interfaz1();
-                                        recuadro(20,5,43,2,cBLANCO,cNEGRO);
-                                        recuadro(20,8,43,5,cBLANCO,cNEGRO);
+    if(apuesta>saldoinicial){
+             locate(21,14);
+             setColor(RED);
+         cout<<"NO PUEDES APOSTAR MAS DE "<<saldoinicial<<"$";
+          setColor(GREEN);
+         locate(39,12);
+         cout<<"        ";
 
+    }else{
+    corte=0;
+    }
+    }
+    saldoactual=saldoinicial-apuesta;
 
-                                    system("COLOR 7F");
-                                    setColor(GREEN);
-                                    locate(36,6);
-                                    cout<<"TU TURNO;"<<jugador1;
-                                    locate(35,2);
-                                    cout<<" SIMULADOR ";
-                                    locate(30,14);
-                                        locate(20,17);
-                                        cout<<"Eso no es posible, por favor, ingresar un valor logico";
-                                        locate(30,14);
-                                        cout<<"Ingrese apuesta: ";
-                                        locate(46,14);
-                                        cin>>apuesta;
-                                        saldoactual=saldoinicial-apuesta;
-                                        system("cls");
-
-                                        }
          interfaz1();
     recuadro(20,5,43,2,cBLANCO,cNEGRO);
-recuadro(20,8,43,5,cBLANCO,cNEGRO);
+    recuadro(20,8,43,5,cBLANCO,cNEGRO);
+    recuadro(20,15,43,2,cBLANCO,cNEGRO);
 
 
                                         system("COLOR 7F");
@@ -843,21 +894,15 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
     cout<<"TU TURNO;"<<jugador1;
     locate(35,2);
     cout<<" SIMULADOR ";
-    locate(45,15);
-    cout<<"$";
-    locate(30,15);
-    cout<<"Saldo actual: "<<saldoactual;
+
+    locate(32,16);
+
+    cout<<"Saldo actual: "<<saldoactual<<"$";
+
+    ingresardados(dado);
 
 
-    for(int j=0;j<3;j++){
-    locate(23,8+j+1);
-    cout<<"INGRESE EL DADO "<<j+1<<" ;";
-    cin>>dado[j];
-
-
-    }
-
-
+    interfaz1();
 
 
 
@@ -871,48 +916,7 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
     cout<<"TUS DADOS SON: "<<endl;
     locate(21,5);
     cout<< " ---------------------------------------- " <<endl;
-
-    for(int d=0;d<=2;d++){
-        switch (dado[d])
-        {
-        case 1://dado1
-         dados(1,recu);
-        recu+=15;
-            break;
-        case 2://dado 2
-       dados(2,recu);
-        recu+=15;
-            break;
-            case 3://dado 3
-      dados(3,recu);
-        recu+=15;
-            break;
-            case 4://dado 4
-        dados(4,recu);
-        recu+=15;
-            break;
-             case 5://dado 5
-        dados(5,recu);
-        recu+=15;
-            break;
-    case 6://dado 6
-      dados(6,recu);
-        recu+=15;
-            break;
-
-        default:
-            break;
-        }
-
-
-
-    }recu=0;
-
-/*
-    for (i=0;i<=2;i++){
-            locate(40,i+7);
-    cout<<"dado "<<i+1<<": "<<dado[i]<<endl;
-    }*/
+    dados(dado,recu);
     cambiardados(dado,otratirada,conservar,cambiardado1,cambiardado2,jugador1);
 
         system("cls");
@@ -925,7 +929,7 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
     cout<<"turno de: "<< jugador1<< endl;
     locate(23,5);
     cout<< " ---------------------------------------- " <<endl;
- system("cls");
+    system("cls");
      recuadro(19,2,44,10,cBLANCO,cNEGRO);
     system("COLOR 7F");
     setColor(GREEN);
@@ -935,45 +939,9 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
     cout<<"TUS DADOS SON: "<<endl;
     locate(21,5);
     cout<< " ---------------------------------------- " <<endl;
+    dados(dado,recu);
 
-    for(int d=0;d<=2;d++){
-        switch (dado[d])
-        {
-        case 1://dado1
-         dados(1,recu);
-        recu+=15;
-            break;
-        case 2://dado 2
-       dados(2,recu);
-        recu+=15;
-            break;
-            case 3://dado 3
-      dados(3,recu);
-        recu+=15;
-            break;
-            case 4://dado 4
-        dados(4,recu);
-        recu+=15;
-            break;
-             case 5://dado 5
-        dados(5,recu);
-        recu+=15;
-            break;
-    case 6://dado 6
-      dados(6,recu);
-        recu+=15;
-            break;
-
-        default:
-            break;
-        }
-
-
-
-    }recu=0;
-
-
-    diferentes_resultados(dado,puntuacionj1,jugador1,apuesta,apuesta2,seguirjugando);
+    diferentes_resultados(dado,puntuacionj1,jugador1,apuesta,apuesta2,seguirjugando,saldoactual);
 
 }
 
@@ -1031,7 +999,7 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
                  locate(40,i+7);
     cout<<"dado "<<i+1<<": "<<dado[i]<<endl;
     }
-    diferentes_resultados(dado,puntuacionj1,jugador1,apuesta,apuesta2,seguirjugando);
+    diferentes_resultados(dado,puntuacionj1,jugador1,apuesta,apuesta2,seguirjugando,saldoactual);
 
                                         //system("pause");//TECLEAR PARA PROCEDER A LA SIGUIENTE LINEA
                                         cls();
