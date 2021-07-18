@@ -508,10 +508,180 @@ locate(2,6);
 getch();
 cls();}
 void cambiardados(int dado[2],int otratirada,int conservar,int cambiardado1,int cambiardado2,char jugador1[100]){
- locate(21,14);
-    cout<<"Desea realizar una segunda tirada? 1(si) 2(no)"<<endl;
-    locate(43,15);
-    cin>>otratirada;
+int y=0,x=0;
+int key=0;
+bool ms=true;
+bool mnn=true;
+    gotoxy(23,15);
+cout<<"DESEA CAMBIAR DE DADOS ?";
+gotoxy(24,17);
+cout<<"SI";
+gotoxy(24,19);
+cout<<"NO";
+
+ do
+     {
+
+      gotoxy(23,17+y);
+      cout<<(char)219;
+      key=getkey();
+      switch (key)
+      {
+      case 15://abajo
+           gotoxy(23,17+y);
+          cout<<" ";
+           y+=2;
+           if(y>2){
+            y=0;
+           }
+          break;
+      case 14://arriba
+          gotoxy(23,17+y);
+          cout<<" ";
+           y-=2;
+           if(y<0){
+            y=2;
+           }
+          break;
+      case 1://enter
+              switch (y)
+            {
+                case 0 ://SI
+                    gotoxy(23,17);
+                    cout<<" ";
+                    gotoxy(24,19);
+                    cout<<"  ";
+                    gotoxy(25,18);
+                    cout<<"ASIGNE UN VALOR A LOS DADOS ";
+                    gotoxy(26,19);
+                    cout<<"1 "<<"="<<dado[0];
+                     gotoxy(26,20);
+                    cout<<"2 "<<"="<<dado[1];
+                     gotoxy(26,21);
+                    cout<<"3 "<<"="<<dado[2];
+                    gotoxy(39,23);
+                    cout<<"LISTO";
+
+                    do
+                    {
+                     gotoxy(25+x,19+y);
+                     cout<<(char)219;
+                     key=getkey();
+                     switch (key)
+                     {   case 1:
+                         switch (y)
+                         {
+                             case 0 ://dado 1
+                                 gotoxy(29,19);
+                                 cout<<" ";
+                                 gotoxy(33,19);
+                                 cout<<"<==INGRESE NUEVO VALOR";
+                                 gotoxy(29,19);
+                                 cin>>dado[0];
+                                  gotoxy(33,19);
+                                  cout<<"                        ";
+
+                             break;
+                             case 1 ://dado 2
+                                  gotoxy(29,20);
+                                 cout<<" ";
+                                 gotoxy(33,20);
+                                 cout<<"<==INGRESE NUEVO VALOR";
+                                 gotoxy(29,20);
+                                 cin>>dado[1];
+                                 gotoxy(33,20);
+                                 cout<<"                         ";
+
+
+
+                             break;
+                             case 2 ://dado 3
+                                 gotoxy(29,21);
+                                 cout<<" ";
+                                 gotoxy(33,21);
+                                 cout<<"<==INGRESE NUEVO VALOR";
+                                 gotoxy(29,21);
+                                 cin>>dado[2];
+                                 gotoxy(33,21);
+                                  cout<<"                         ";
+                             break;
+
+                       case 4 ://LISTO
+                           mnn=false;
+                           ms=false;
+                        cls();
+                        break;
+
+                         }
+
+                         break;
+                         case 15://abajo
+                         gotoxy(25,19+y);
+                         cout<<" ";
+                         y+=1;
+                         if(y>4){
+                                gotoxy(37,23);
+                              cout<<"  ";
+                            x=0;
+                            y=0;
+
+
+                         }
+                         if(y>2){
+                            y=4;
+                            x+=13;
+                         }
+
+                      break;
+                       case 14://arriba
+                       gotoxy(25,19+y);
+                       cout<<" ";
+                       y-=1;
+                        if(y<0){
+                            x+=13;
+                            y=4;
+
+                         } if(y==3){
+                              gotoxy(37,23);
+                              cout<<"  ";
+                            y=2;
+                            x=0;
+                         }
+                        break;
+
+
+
+
+
+                     }
+
+
+
+
+
+
+
+                    } while (ms==true);
+
+                    break;
+
+
+            }
+        break;
+
+
+
+      }
+
+
+     } while (mnn==true);
+
+
+
+
+
+
+/*
         if (otratirada==1){
     locate(5,17);
     cout<<"Desea cambiar algun dado 1(cambiar los 3),2(si,cambiar 1 dado),3(cambiar 2)"<<endl;
@@ -685,7 +855,7 @@ void cambiardados(int dado[2],int otratirada,int conservar,int cambiardado1,int 
     }
         }
 
-
+*/
 }
 void dados(int dado[2], int& recu){
 
