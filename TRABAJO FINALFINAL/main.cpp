@@ -913,6 +913,30 @@ void ingresardados(int dado[2]){
 
     }
 }
+void turnode(int contador , int dado[2],char jugador1[100],int recu){
+interfaz1();
+
+    recuadro(20,3,43,2,cBLANCO,cNEGRO);
+     recuadro(20,5,43,7,cBLANCO,cNEGRO);
+                                        system("COLOR 7F");
+                                        setColor(GREEN);
+                                        locate(36,2);
+                                           cout<<" 2 JUGADORES ";
+                                        locate(1,1);
+    cout<<"Ronda: "<<contador;
+    locate(23,6);
+    cargarAleatorio(dado,3,6);
+
+    locate(37,4);
+    cout<<"turno de: "<< jugador1<< endl;
+   dados(dado,recu);
+
+
+
+
+}
+
+
 int main()
 {
 system("mode con: cols=80 lines=30");
@@ -1042,7 +1066,7 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
                                         setColor(GREEN);
                                             locate(36,6);
     cout<<"TU TURNO;"<<jugador1;
-    locate(35,2);
+    locate(36,2);
     cout<<" SIMULADOR ";
     while (corte!=0){
         locate(22,9);
@@ -1209,11 +1233,11 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
                                     cls();
                                      mn=false;
                                     break;
-                                    case 3:
+                                    case 3://MODO 2 JUGADORES
                                         cls();
                                         empate=0;
                                         contador=0;
-
+                                        interfaz1();
 
                                         puntuacionj1=1;
                                         puntuacionj2=1;
@@ -1224,8 +1248,11 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
                                         recuadro(23,19,45,4,cBLANCO,cNEGRO);
                                         system("COLOR 7F");
                                         setColor(GREEN);
+                                           locate(36,2);
+                                           cout<<" 2 JUGADORES ";
                                         locate(27,8);
                                         cout<<"Nombre del jugador 1: ";
+
                                         cin>>jugador1;
                                         locate(27,15);
                                         cout<<"Nombre del jugador 2: ";
@@ -1256,27 +1283,28 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
     otratirada=0;
     system("cls");
 
+/*interfaz1();
 
-    recuadro(22,2,43,10,cBLANCO,cNEGRO);
+    recuadro(20,3,43,2,cBLANCO,cNEGRO);
+     recuadro(20,5,43,7,cBLANCO,cNEGRO);
                                         system("COLOR 7F");
                                         setColor(GREEN);
+                                        locate(36,2);
+                                           cout<<" 2 JUGADORES ";
                                         locate(1,1);
     cout<<"Ronda: "<<contador;
-    locate(23,3);
+    locate(23,6);
     cargarAleatorio(dado,3,6);
-    cout<< " ---------------------------------------- " <<endl;
-    locate(36,4);
-    cout<<"turno de: "<< jugador1<< endl;
-    locate(23,5);
-    cout<< " ---------------------------------------- " <<endl;
 
-    for (i=0;i<=2;i++){
-            locate(40,i+7);
-    cout<<"dado "<<i+1<<": "<<dado[i]<<endl;
-    }
+    locate(37,4);
+    cout<<"turno de: "<< jugador1<< endl;
+   dados(dado,recu);*/
+   turnode(contador,dado,jugador1,recu);
+
    segunda_tirada(otratirada,conservar,jugador1,cambiardado1,cambiardado2,dado,i);
 
         system("cls");
+
     recuadro(22,2,43,10,cBLANCO,cNEGRO);
     system("COLOR 7F");
     setColor(GREEN);
