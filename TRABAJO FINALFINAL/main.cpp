@@ -457,9 +457,7 @@ cout<<(char)254<<"Cada jugador tiene hasta un maximo de 2 tiradas para conseguir
     locate(2,8);
 cout<<(char)254<<"Se deben lanzar los tres dados al mismo tiempo en el recipiente."<<endl;
 locate(2,10);
-/*cout<<(char)254<<"Si un dado sale del recipiente el jugador pierde automaticamente y debe "<<endl;
-locate(2,12);
-cout<<"pagar la cantidad de dinero apostada. A esto se le llama meada"<<endl;*/
+
 
     locate(22,22);
     cout<<"PRESIONE CUALQUIER TECLA PARA CONTINUAR"<<endl;
@@ -954,7 +952,221 @@ cout<<"NO";
 
 
 }
+void cambiardadosj1(int dado[2],int otratirada,int conservar,int cambiardado1,int cambiardado2,char jugador1[100],int recu,int puntuacion){
+int y=0,x=0;
+int key=0;
+bool ms=true;
+bool mnn=true;
 
+
+
+
+    gotoxy(23,15);
+cout<<"DESEA REALIZAR OTRA TIRADA ?";
+gotoxy(24,17);
+cout<<"SI";
+gotoxy(24,19);
+cout<<"NO";
+
+ do
+     {
+      comentariopuntaje(dado,puntuacion,jugador1);
+      gotoxy(23,17+y);
+      cout<<(char)219;
+      key=getkey();
+      switch (key)
+      {
+      case 15://abajo
+           gotoxy(23,17+y);
+          cout<<" ";
+           y+=2;
+           if(y>2){
+            y=0;
+           }
+          break;
+      case 14://arriba
+          gotoxy(23,17+y);
+          cout<<" ";
+           y-=2;
+           if(y<0){
+            y=2;
+           }
+          break;
+      case 1://enter
+              switch (y)
+            {
+                case 0 ://SI
+                    gotoxy(23,17);
+                    cout<<" ";
+                    gotoxy(24,19);
+                    cout<<"  ";
+                    gotoxy(25,18);
+                    cout<<"ELIJA LA CANTIDAD DE DADOS";
+                    gotoxy(26,19);
+                    cout<<"1 DADO ";
+                     gotoxy(26,20);
+                    cout<<"2 DADOS";
+                     gotoxy(26,21);
+                    cout<<"3 DADOS ";
+
+
+                    do
+                    {
+                    comentariopuntaje(dado,puntuacion,jugador1);
+                     gotoxy(25+x,19+y);
+                     cout<<(char)219;
+                     key=getkey();
+                     switch (key)
+
+
+
+                     {   case 1:
+                         switch (y)
+                         {
+                             case 0 ://CAMBIAR 1 DADO
+                                    gotoxy(26,20);
+                                    cout<<"       ";
+                                    gotoxy(26,21);
+                                    cout<<"       ";
+                                 gotoxy(33,20);
+                                 cout<<"ELIJA QUE DADO DESEA CAMBIAR ";
+                                 gotoxy(33,21);
+                                 cout<<"DADO 1="<<dado[0];
+                                 gotoxy(33,22);
+                                 cout<<"DADO 2="<<dado[1];
+                                 gotoxy(33,23);
+                                 cout<<"DADO 3="<<dado[2];
+                                  do
+                                  {
+                                        gotoxy(32,21+y);
+                                        cout<<(char)219;
+                                        key=getkey();
+                                        switch (key)
+                                        {
+                                        case 15://abajo
+                                            gotoxy(32,21+y);
+                                            cout<<" ";
+                                            y+=1;
+                                              if(y>2){
+                                                    y=0;
+                                                }
+                                            break;
+                                         case 14://arriba
+                                            gotoxy(32,21+y);
+                                            cout<<" ";
+                                            y-=1;
+                                             if(y<0){
+                                              y=2;
+                                                }
+
+                                            break;
+
+                                        }
+
+
+                                  } while (mnn==true);
+
+
+                                 dados(dado,recu);
+                                  gotoxy(33,19);
+                                  cout<<"                        ";
+
+                             break;
+                             case 1 ://dado 2
+                                  gotoxy(29,20);
+                                 cout<<" ";
+                                 gotoxy(33,20);
+                                 cout<<"<==INGRESE NUEVO VALOR";
+                                 gotoxy(29,20);
+                                 cin>>dado[1];
+                                 dados(dado,recu);
+                                 gotoxy(33,20);
+                                 cout<<"                         ";
+
+
+
+                             break;
+                             case 2 ://dado 3
+                                 gotoxy(29,21);
+                                 cout<<" ";
+                                 gotoxy(33,21);
+                                 cout<<"<==INGRESE NUEVO VALOR";
+                                 gotoxy(29,21);
+                                 cin>>dado[2];
+                                 dados(dado,recu);
+                                 gotoxy(33,21);
+                                  cout<<"                         ";
+                             break;
+
+                       case 4 ://LISTO
+                           mnn=false;
+                           ms=false;
+                        cls();
+                        break;
+
+                         }
+
+                         break;
+                         case 15://abajo
+                         gotoxy(25,19+y);
+                         cout<<" ";
+                         y+=1;
+
+                         if(y>2){
+                            y=0;
+
+                         }
+
+                      break;
+                       case 14://arriba
+                       gotoxy(25,19+y);
+                       cout<<" ";
+                       y-=1;
+                        if(y<0){
+
+                            y=2;
+
+                         }
+                        break;
+
+
+
+
+
+                     }
+
+
+
+
+
+
+
+                    } while (ms==true);
+
+                    break;
+
+                    case 2 ://NO
+                        cls();
+                mnn=false;
+                break;
+
+            }
+        break;
+
+
+
+      }
+
+
+     } while (mnn==true);
+
+
+
+
+
+
+
+}
 int main()
 {
 system("mode con: cols=80 lines=30");
@@ -1254,7 +1466,7 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
     cout<<"Saldo actual: "<<saldoinicial<<"$";
 
     dados(dado,recu);
-    cambiardados(dado,otratirada,conservar,cambiardado1,cambiardado2,jugador1,recu,puntuacionj1);
+    cambiardadosj1(dado,otratirada,conservar,cambiardado1,cambiardado2,jugador1,recu,puntuacionj1);
 
 
         system("cls");
