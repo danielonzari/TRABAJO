@@ -187,6 +187,7 @@ void diferentes_resultados (int dados[2],int puntuacion,char jugador[99],int& ap
     getch();
     system ("cls");
     recuadro(22,2,43,10,cBLANCO,cNEGRO);
+    recuadro(33,13,20,2,cBLANCO,cNEGRO);
     system("COLOR 7F");
     setColor(GREEN);
     locate(23,3);
@@ -216,6 +217,7 @@ void diferentes_resultados (int dados[2],int puntuacion,char jugador[99],int& ap
 
         if(saldoinical<=0){
 
+             locate(34,14);
             cout<<"Ya no posees dinero";
             seguirjugandoo=0;
         }else{
@@ -665,6 +667,10 @@ cout<<"NO";
 
                     break;
 
+                    case 2 ://NO
+                        cls();
+                mnn=false;
+                break;
 
             }
         break;
