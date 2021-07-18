@@ -174,7 +174,7 @@ void diferentes_resultados (int dados[2],int puntuacion,char jugador[99],int& ap
 
 
     }
-    if(puntuacion==-2 || puntuacion==0){apuesta2=apuesta*-2;}
+    if(puntuacion==-2 || puntuacion==0){apuesta2=apuesta*-3;}
     else if (puntuacion==100000){apuesta2=apuesta*4;}
     else if (puntuacion==100){apuesta2=apuesta*3;}
     else if(puntuacion<4){apuesta2=apuesta;}
@@ -221,7 +221,7 @@ void diferentes_resultados (int dados[2],int puntuacion,char jugador[99],int& ap
             cout<<"Ya no posees dinero";
             seguirjugandoo=0;
         }else{
-         locate(20,15);
+         locate(25,15);
          cout<<"[1]JUGAR OTRA RONDA , 0[SALIR]: ";
          cin>>seguirjugandoo;
         }
@@ -585,43 +585,120 @@ interfaz1();
 void comentariopuntaje(int dados[2],int puntuacion ,char jugador[99]){
 
     if( (dados[0]==1) && (dados[1]==1) && (dados[2]==1) ){
-            locate(33,26);
-        cout<<"Realizaste triple 1";
+          locate(37,26);
+        cout<<"                 ";
+            locate(9,27);
+            cout<<"                                                                    ";
+            locate(26,28);
+            cout<<"                                      ";
+
+
+
+           ///////////////////////
+             locate(38,26);
+        cout<<"TRIPLE 1";
+            locate(28,27);
+            cout<<"PERDERIAS INSTANTANEAMENTE";
+            locate(26,28);
+            cout<<"PAGANDO EL TRIPLE DE LO APOSTADO";
         locate(22,14);
         puntuacion=-2;
 
     }
     else if((dados[0]==1 || dados[1]==1 || dados[2]==1) && (dados[0]==2 || dados[1]==2 || dados[2]==2) && (dados[0]==3 || dados[1]==3 || dados[2]==3)){
+    locate(30,26);
+        cout<<"                                          ";
+            locate(9,27);
+           cout<<"                                                                    ";
+            locate(26,28);
+            cout<<"                                        ";
 
-            locate(25,13);
-    cout<<"Usted saco 1,2,3, perdio instantaneamente";
+
+    /////////////////////////////
+
+            locate(37,26);
+            cout<<"SACO 1,2,3";
+            locate(28,27);
+            cout<<"PERDERIAS INSTANTANEAMENTE";
+             locate(26,28);
+            cout<<"PAGANDO EL DOBLE DE LO APOSTADO";
     puntuacion=0;
 
             }
     else if ((dados[0]==dados[1]) && (dados[1]==dados[2]))
-    {locate(17,13);
-    cout<<"Felicidades usted saco numeros iguales gano instantaneamente";
+    {    locate(30,26);
+        cout<<"                                          ";
+          locate(9,27);
+           cout<<"                                                                    ";
+            locate(26,28);
+            cout<<"                                         ";
+
+        //////////////////////////////////////////////////////////////
+         locate(32,26);
+            cout<<"SACO NUMEROS IGUALES";
+                locate(9,27);
+        cout<<"GANARIAS INSTANTANEAMENTE/SI EL OTRO JUGADOR SACA DE MENOR JERARQUIA";
+        locate(26,28);
+            cout<<"GANANDO EL CUADRUPLE DE LO APOSTADO";
+
+
+
+
         puntuacion=100000;
     }
     else if((dados[0]==4 || dados[1]==4 || dados[2]==4) && (dados[0]==5 || dados[1]==5 || dados[2]==5) && (dados[0]==6 || dados[1]==6 || dados[2]==6)){
-    locate(20,13);
-    cout<<"Felicidades usted saco un 4,5,6 gano instantaneamente";
+         locate(30,26);
+        cout<<"                                          ";
+          locate(9,27);
+           cout<<"                                                                    ";
+            locate(26,28);
+            cout<<"                                         ";
+
+        //////////////////////////////////////////////////////////////
+
+   locate(37,26);
+    cout<<"SACO 4,5,6";
+      locate(28,27);
+            cout<<"GANARIAS INSTANTANEAMENTE";
+            locate(26,28);
+            cout<<"GANANDO EL TRIPLE DE LO APOSTADO";
+
+
     puntuacion=100;
     }
     else if (dados[0]==dados[1])
     {   if(dados[2]==1){ puntuacion=0;
     }
         else puntuacion = dados[2];
-        locate(24,13);
-        cout << "La puntuacion de "<<jugador<<" es de: " << puntuacion << endl;
+           locate(30,26);
+        cout<<"                                          ";
+          locate(9,27);
+           cout<<"                                                                    ";
+            locate(26,28);
+            cout<<"                                         ";
+
+        //////////////////////////////////////////////////////////////
+
+
+
+        locate(28,27);
+         cout << "TU PUNTUACION SERIA DE: " << puntuacion << endl;
     }
     else{
         if (dados[0]==dados[2])
         {if(dados[1]==1){ puntuacion=0;
     }
         else puntuacion = dados[1];
-            locate(24,13);
-           cout << "La puntuacion de "<<jugador<<" es de: " << puntuacion << endl;
+           locate(30,26);
+        cout<<"                                          ";
+          locate(9,27);
+           cout<<"                                                                    ";
+            locate(26,28);
+            cout<<"                                         ";
+
+        //////////////////////////////////////////////////////////////
+            locate(28,27);
+           cout << "TU PUNTUACION SERIA DE: " << puntuacion << endl;
         }
         else{
             if (dados[1]==dados[2]){
@@ -629,15 +706,31 @@ void comentariopuntaje(int dados[2],int puntuacion ,char jugador[99]){
     }
         else
                 puntuacion = dados[0];
-                locate(24,13);
-                cout << "La puntuacion de "<<jugador<<" es de: " << puntuacion << endl;
+                   locate(30,26);
+        cout<<"                                          ";
+          locate(9,27);
+           cout<<"                                                                    ";
+            locate(26,28);
+            cout<<"                                         ";
+
+        //////////////////////////////////////////////////////////////
+                locate(28,27);
+                cout << "TU PUNTUACION SERIA DE: " << puntuacion << endl;
             }
         else {
+                  locate(30,26);
+        cout<<"                                          ";
+          locate(9,27);
+           cout<<"                                                                    ";
+            locate(26,28);
+            cout<<"                                         ";
 
-                        locate(28,14);
-            cout<<"No realizaste ninguna puntuacion ";
-            locate(30,15);
-            cout<<"Buena suerte para la proxima";
+        //////////////////////////////////////////////////////////////
+
+            locate(26,27);
+            cout<<"NO REALIZASTE NINGUNA PUNTUACION";
+            locate(27,28);
+            cout<<"BUENA SUERTE PARA LA PROXIMA";
         }
 
 
@@ -656,6 +749,7 @@ int y=0,x=0;
 int key=0;
 bool ms=true;
 bool mnn=true;
+
 
 
 
@@ -973,6 +1067,7 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
     cout<<"TU TURNO;"<<jugador1;
     locate(36,2);
     cout<<" SIMULADOR ";
+    corte=1;
     while (corte!=0){
         locate(22,9);
     cout<<"SALDO ACTUAL : "<<saldoinicial<<"$";
@@ -1018,6 +1113,7 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
 
 
     system("cls");
+      recuadro(19,14,44,10,cBLANCO,cNEGRO);
      recuadro(19,2,44,10,cBLANCO,cNEGRO);
     system("COLOR 7F");
     setColor(GREEN);
