@@ -582,7 +582,76 @@ interfaz1();
 
 
 }
-void cambiardados(int dado[2],int otratirada,int conservar,int cambiardado1,int cambiardado2,char jugador1[100],int recu){
+void comentariopuntaje(int dados[2],int puntuacion ,char jugador[99]){
+
+    if( (dados[0]==1) && (dados[1]==1) && (dados[2]==1) ){
+            locate(33,26);
+        cout<<"Realizaste triple 1";
+        locate(22,14);
+        puntuacion=-2;
+
+    }
+    else if((dados[0]==1 || dados[1]==1 || dados[2]==1) && (dados[0]==2 || dados[1]==2 || dados[2]==2) && (dados[0]==3 || dados[1]==3 || dados[2]==3)){
+
+            locate(25,13);
+    cout<<"Usted saco 1,2,3, perdio instantaneamente";
+    puntuacion=0;
+
+            }
+    else if ((dados[0]==dados[1]) && (dados[1]==dados[2]))
+    {locate(17,13);
+    cout<<"Felicidades usted saco numeros iguales gano instantaneamente";
+        puntuacion=100000;
+    }
+    else if((dados[0]==4 || dados[1]==4 || dados[2]==4) && (dados[0]==5 || dados[1]==5 || dados[2]==5) && (dados[0]==6 || dados[1]==6 || dados[2]==6)){
+    locate(20,13);
+    cout<<"Felicidades usted saco un 4,5,6 gano instantaneamente";
+    puntuacion=100;
+    }
+    else if (dados[0]==dados[1])
+    {   if(dados[2]==1){ puntuacion=0;
+    }
+        else puntuacion = dados[2];
+        locate(24,13);
+        cout << "La puntuacion de "<<jugador<<" es de: " << puntuacion << endl;
+    }
+    else{
+        if (dados[0]==dados[2])
+        {if(dados[1]==1){ puntuacion=0;
+    }
+        else puntuacion = dados[1];
+            locate(24,13);
+           cout << "La puntuacion de "<<jugador<<" es de: " << puntuacion << endl;
+        }
+        else{
+            if (dados[1]==dados[2]){
+            if(dados[0]==1){ puntuacion=0;
+    }
+        else
+                puntuacion = dados[0];
+                locate(24,13);
+                cout << "La puntuacion de "<<jugador<<" es de: " << puntuacion << endl;
+            }
+        else {
+
+                        locate(28,14);
+            cout<<"No realizaste ninguna puntuacion ";
+            locate(30,15);
+            cout<<"Buena suerte para la proxima";
+        }
+
+
+        }
+
+
+    }
+
+
+
+
+
+}
+void cambiardados(int dado[2],int otratirada,int conservar,int cambiardado1,int cambiardado2,char jugador1[100],int recu,int puntuacion){
 int y=0,x=0;
 int key=0;
 bool ms=true;
@@ -596,7 +665,7 @@ cout<<"NO";
 
  do
      {
-
+      comentariopuntaje(dado,puntuacion,jugador1);
       gotoxy(23,17+y);
       cout<<(char)219;
       key=getkey();
@@ -639,10 +708,14 @@ cout<<"NO";
 
                     do
                     {
+                    comentariopuntaje(dado,puntuacion,jugador1);
                      gotoxy(25+x,19+y);
                      cout<<(char)219;
                      key=getkey();
                      switch (key)
+
+
+
                      {   case 1:
                          switch (y)
                          {
@@ -952,7 +1025,8 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
     locate(21,5);
     cout<< " ---------------------------------------- " <<endl;
     dados(dado,recu);
-    cambiardados(dado,otratirada,conservar,cambiardado1,cambiardado2,jugador1,recu);
+    cambiardados(dado,otratirada,conservar,cambiardado1,cambiardado2,jugador1,recu,puntuacionj1);
+
 
         system("cls");
     recuadro(22,2,43,10,cBLANCO,cNEGRO);
