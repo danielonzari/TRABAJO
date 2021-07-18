@@ -749,8 +749,7 @@ void comentariopuntaje(int dados[2],int puntuacion ,char jugador[99]){
 
             locate(26,27);
             cout<<"NO REALIZASTE NINGUNA PUNTUACION";
-            locate(27,28);
-            cout<<"BUENA SUERTE PARA LA PROXIMA";
+
         }
 
 
@@ -1187,19 +1186,85 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
                                     case 0://JUGADOR 1
                                      cls();
                                      system("cls");
-                                        menu_unico_jugador(jugador1,"JUGADOR 1",2,apuesta,saldoinicial,saldoactual,seguirjugando);
+                                         menu_unico_jugador(jugador1,"JUGADOR 1",1,apuesta,saldoinicial,saldoactual,seguirjugando);
+while(seguirjugando!=0){
                                         locate(30,20);
-
-    cambiardado1=0;
-    cambiardado2=0;
+                                        cambiardado1=0;
+                                         cambiardado2=0;
     system("cls");
-    recuadro(22,2,43,10,cBLANCO,cNEGRO);
+    interfaz1();
+    recuadro(20,5,43,2,cBLANCO,cNEGRO);
+recuadro(20,8,43,5,cBLANCO,cNEGRO);
+
+
                                         system("COLOR 7F");
                                         setColor(GREEN);
-    locate(23,3);
+                                            locate(36,6);
+    cout<<"TU TURNO;"<<jugador1;
+    locate(36,2);
+    cout<<" JUGADOR 1 ";
+    corte=1;
+    while (corte!=0){
+        locate(22,9);
+    cout<<"SALDO ACTUAL : "<<saldoinicial<<"$";
+    locate(22,12);
+    cout<<"INGRESE APUESTA :";
+    cin>>apuesta;
+    if(apuesta>saldoinicial){
+             locate(21,14);
+             setColor(RED);
+         cout<<"NO PUEDES APOSTAR MAS DE "<<saldoinicial<<"$";
+          setColor(GREEN);
+         locate(39,12);
+         cout<<"        ";
 
-    cargarAleatorio(dado,3,6);
-   recuadro(22,2,43,10,cBLANCO,cNEGRO);
+    }else{
+    corte=0;
+    }
+    }
+
+
+         interfaz1();
+    recuadro(20,5,43,2,cBLANCO,cNEGRO);
+    recuadro(20,8,43,5,cBLANCO,cNEGRO);
+    recuadro(20,15,43,2,cBLANCO,cNEGRO);
+
+
+                                        system("COLOR 7F");
+                                        setColor(GREEN);
+                                            locate(36,6);
+    cout<<"TU TURNO;"<<jugador1;
+    locate(35,2);
+    cout<<" SIMULADOR ";
+
+    locate(32,16);
+
+    cout<<"Saldo actual: "<<saldoinicial<<"$";
+
+    ingresardados(dado);
+
+
+    interfaz1();
+
+
+
+    system("cls");
+      recuadro(19,14,44,10,cBLANCO,cNEGRO);
+     recuadro(19,2,44,10,cBLANCO,cNEGRO);
+    system("COLOR 7F");
+    setColor(GREEN);
+    locate(21,3);
+    cout<< " ---------------------------------------- " <<endl;
+    locate(35,4);
+    cout<<"TUS DADOS SON: "<<endl;
+    locate(21,5);
+    cout<< " ---------------------------------------- " <<endl;
+    dados(dado,recu);
+    cambiardados(dado,otratirada,conservar,cambiardado1,cambiardado2,jugador1,recu,puntuacionj1);
+
+
+        system("cls");
+    recuadro(22,2,43,10,cBLANCO,cNEGRO);
     system("COLOR 7F");
     setColor(GREEN);
     locate(23,3);
@@ -1219,25 +1284,10 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
     locate(21,5);
     cout<< " ---------------------------------------- " <<endl;
     dados(dado,recu);
-    segunda_tirada(otratirada,conservar,jugador1,cambiardado1,cambiardado2,dado,i);
 
-        system("cls");
-    recuadro(22,2,43,10,cBLANCO,cNEGRO);
-    system("COLOR 7F");
-    setColor(GREEN);
-    locate(23,3);
-     cout<< " ---------------------------------------- " <<endl;
-    locate(36,4);
-    cout<<"turno de: "<< jugador1<< endl;
-    locate(23,5);
-    cout<< " ---------------------------------------- " <<endl;
+    diferentes_resultados(dado,puntuacionj1,jugador1,apuesta,apuesta2,seguirjugando,saldoinicial);
 
-
-        for (i=0;i<=2;i++){
-                 locate(40,i+7);
-    cout<<"dado "<<i+1<<": "<<dado[i]<<endl;
-    }
-    diferentes_resultados(dado,puntuacionj1,jugador1,apuesta,apuesta2,seguirjugando,saldoactual);
+}
 
                                         //system("pause");//TECLEAR PARA PROCEDER A LA SIGUIENTE LINEA
                                         cls();
