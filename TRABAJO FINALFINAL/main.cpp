@@ -124,7 +124,7 @@ void diferentes_resultados (int dados[2],int puntuacion,char jugador[99],int& ap
 
             locate(25,13);
     cout<<"Usted saco 1,2,3, perdio instantaneamente";
-    puntuacion=0;
+    puntuacion=-2;
 
             }
     else if ((dados[0]==dados[1]) && (dados[1]==dados[2]))
@@ -161,7 +161,7 @@ void diferentes_resultados (int dados[2],int puntuacion,char jugador[99],int& ap
                 locate(24,13);
                 cout << "La puntuacion de "<<jugador<<" es de: " << puntuacion << endl;
             }
-        else {
+        else {  puntuacion=3;
 
                         locate(28,14);
             cout<<"No realizaste ninguna puntuacion ";
@@ -174,11 +174,13 @@ void diferentes_resultados (int dados[2],int puntuacion,char jugador[99],int& ap
 
 
     }
-    if(puntuacion==-2 || puntuacion==0){apuesta2=apuesta*-2;}
+    if(puntuacion==-2){apuesta2=apuesta*-3;}
     else if (puntuacion==100000){apuesta2=apuesta*4;}
     else if (puntuacion==100){apuesta2=apuesta*3;}
     else if(puntuacion<4){apuesta2=apuesta;}
-    else if(puntuacion!=100 && puntuacion>=4 && puntuacion!=100000){
+    else if(puntuacion==3){apuesta2=apuesta;
+    }
+    else if(puntuacion!=100 && puntuacion>=4 && puntuacion!=100000 && puntuacion!=3){
         apuesta2=apuesta*2;
     }
     locate(25,25);
@@ -197,6 +199,7 @@ void diferentes_resultados (int dados[2],int puntuacion,char jugador[99],int& ap
     if (puntuacion>=4) {
         locate(35,4);
         cout << "  G A N A S T E    " << endl;
+
         locate(30,10);
     cout<<"USTED RECIBIO UN TOTAL DE "<<apuesta2<<"$";
     saldoinical=saldoinical+apuesta2;
@@ -206,22 +209,30 @@ void diferentes_resultados (int dados[2],int puntuacion,char jugador[99],int& ap
     else{
         locate(35,4);
         cout << "  P E R D I S T E  " << endl;
+        if (puntuacion==3){saldoinical=saldoinical-apuesta2;}
+        else {saldoinical=saldoinical+apuesta2;}
          locate(30,10);
     cout<<"USTED PERDIO UN TOTAL DE "<<apuesta2<<"$";
-    saldoinical=saldoinical+apuesta2;
+
     locate(35,11);
     cout<<"LA PROXIMA SERA";
 
     }
 
 
-        if(saldoinical<=0){
+        if(saldoinical==0){
 
              locate(34,15);
             cout<<"Ya no posees dinero";
             seguirjugandoo=0;
-        }else{
-         locate(20,15);
+        }
+        else if(saldoinical<0){
+            locate(25,15);
+            cout<<"Perdiste mas de la cuenta, nos debes: "<<saldoinical*-1;
+            seguirjugandoo=0;
+        }
+        else if(saldoinical>0){
+         locate(25,15);
          cout<<"[1]JUGAR OTRA RONDA , 0[SALIR]: ";
          cin>>seguirjugandoo;
         }
@@ -232,6 +243,17 @@ void diferentes_resultados (int dados[2],int puntuacion,char jugador[99],int& ap
     locate(26,8);
     cout<<"PRESIONE CUALQUIER TECLA PARA SALIR"<<endl;
     getch();
+
+    if(saldoinical<0){
+            system("cls");
+             recuadro(19,9,49,2,cBLANCO,cNEGRO);
+             system("COLOR 7F");
+            setColor(GREEN);
+            locate(20,10);
+            cout<<"NO, ENSERIO MI CVU ES 000220345065454, PAGAME";
+            getch();}
+
+
 
 }
 void menu_unico_jugador (char jugador[100],const char *texto,int y,int& apuesta,int& saldoiniciall,int& saldoactual, int&seguirjugandoo){
@@ -973,6 +995,7 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
     cout<<"TU TURNO;"<<jugador1;
     locate(36,2);
     cout<<" SIMULADOR ";
+    corte=1;
     while (corte!=0){
         locate(22,9);
     cout<<"SALDO ACTUAL : "<<saldoinicial<<"$";
