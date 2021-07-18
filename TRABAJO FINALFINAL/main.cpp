@@ -1225,26 +1225,16 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
 
 
          interfaz1();
-    recuadro(20,5,43,2,cBLANCO,cNEGRO);
-    recuadro(20,8,43,5,cBLANCO,cNEGRO);
-    recuadro(20,15,43,2,cBLANCO,cNEGRO);
 
 
-                                        system("COLOR 7F");
-                                        setColor(GREEN);
-                                            locate(36,6);
-    cout<<"TU TURNO;"<<jugador1;
-    locate(35,2);
-    cout<<" SIMULADOR ";
-
-    locate(32,16);
-
-    cout<<"Saldo actual: "<<saldoinicial<<"$";
-
-    ingresardados(dado);
 
 
-    interfaz1();
+
+
+    cargarAleatorio(dado,3,6);
+
+
+
 
 
 
@@ -1259,6 +1249,10 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
     cout<<"TUS DADOS SON: "<<endl;
     locate(21,5);
     cout<< " ---------------------------------------- " <<endl;
+    locate(32,13);
+
+    cout<<"Saldo actual: "<<saldoinicial<<"$";
+
     dados(dado,recu);
     cambiardados(dado,otratirada,conservar,cambiardado1,cambiardado2,jugador1,recu,puntuacionj1);
 
