@@ -187,7 +187,7 @@ void diferentes_resultados (int dados[2],int puntuacion,char jugador[99],int& ap
     getch();
     system ("cls");
     recuadro(22,2,43,10,cBLANCO,cNEGRO);
-    recuadro(33,13,20,2,cBLANCO,cNEGRO);
+    recuadro(22,14,43,2,cBLANCO,cNEGRO);
     system("COLOR 7F");
     setColor(GREEN);
     locate(23,3);
@@ -217,12 +217,12 @@ void diferentes_resultados (int dados[2],int puntuacion,char jugador[99],int& ap
 
         if(saldoinical<=0){
 
-             locate(34,14);
+             locate(34,15);
             cout<<"Ya no posees dinero";
             seguirjugandoo=0;
         }else{
          locate(20,15);
-         cout<<"presione 1 para jugar otra ronda/0 para salir: ";
+         cout<<"[1]JUGAR OTRA RONDA , 0[SALIR]: ";
          cin>>seguirjugandoo;
         }
          locate(20,15);
@@ -1153,16 +1153,26 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
     locate(23,3);
 
     cargarAleatorio(dado,3,6);
-    cout<< " ---------------------------------------- " <<endl;
+   recuadro(22,2,43,10,cBLANCO,cNEGRO);
+    system("COLOR 7F");
+    setColor(GREEN);
+    locate(23,3);
+     cout<< " ---------------------------------------- " <<endl;
     locate(36,4);
     cout<<"turno de: "<< jugador1<< endl;
     locate(23,5);
     cout<< " ---------------------------------------- " <<endl;
-
-    for (i=0;i<=2;i++){
-            locate(40,i+7);
-    cout<<"dado "<<i+1<<": "<<dado[i]<<endl;
-    }
+    system("cls");
+     recuadro(19,2,44,10,cBLANCO,cNEGRO);
+    system("COLOR 7F");
+    setColor(GREEN);
+    locate(21,3);
+    cout<< " ---------------------------------------- " <<endl;
+    locate(35,4);
+    cout<<"TUS DADOS SON: "<<endl;
+    locate(21,5);
+    cout<< " ---------------------------------------- " <<endl;
+    dados(dado,recu);
     segunda_tirada(otratirada,conservar,jugador1,cambiardado1,cambiardado2,dado,i);
 
         system("cls");
