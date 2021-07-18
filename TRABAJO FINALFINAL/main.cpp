@@ -509,7 +509,80 @@ locate(2,6);
     cout<<(char)254<<"Por el contrario, si un jugador obtiene un 1-2-3 perdera automaticamente"<<endl;locate(2,17);cout<< "y debera pagar el doble de la apuesta a su oponente.";
 getch();
 cls();}
-void cambiardados(int dado[2],int otratirada,int conservar,int cambiardado1,int cambiardado2,char jugador1[100]){
+
+void dados(int dado[2], int& recu){
+
+ for(int d=0;d<=2;d++){
+
+        switch (dado[d])
+        {
+        case 1://dado1
+         dados(1,recu);
+        recu+=15;
+            break;
+        case 2://dado 2
+       dados(2,recu);
+        recu+=15;
+            break;
+            case 3://dado 3
+      dados(3,recu);
+        recu+=15;
+            break;
+            case 4://dado 4
+        dados(4,recu);
+        recu+=15;
+            break;
+             case 5://dado 5
+        dados(5,recu);
+        recu+=15;
+            break;
+    case 6://dado 6
+      dados(6,recu);
+        recu+=15;
+            break;
+
+        default:
+            break;
+        }
+
+
+
+    }
+
+recu=0;
+}
+void ingresardados(int dado[2]){
+    for(int j=0;j<3;j++){
+    locate(23,8+j+1);
+    cout<<"INGRESE EL DADO "<<j+1<<" ;";
+    cin>>dado[j];
+
+
+    }
+}
+void turnode(int contador , int dado[2],char jugador1[100],int recu){
+interfaz1();
+
+    recuadro(20,3,43,2,cBLANCO,cNEGRO);
+     recuadro(20,5,43,7,cBLANCO,cNEGRO);
+                                        system("COLOR 7F");
+                                        setColor(GREEN);
+                                        locate(36,2);
+                                           cout<<" 2 JUGADORES ";
+                                        locate(1,1);
+    cout<<"Ronda: "<<contador;
+    locate(23,6);
+    cargarAleatorio(dado,3,6);
+
+    locate(37,4);
+    cout<<"turno de: "<< jugador1<< endl;
+   dados(dado,recu);
+
+
+
+
+}
+void cambiardados(int dado[2],int otratirada,int conservar,int cambiardado1,int cambiardado2,char jugador1[100],int recu){
 int y=0,x=0;
 int key=0;
 bool ms=true;
@@ -580,6 +653,7 @@ cout<<"NO";
                                  cout<<"<==INGRESE NUEVO VALOR";
                                  gotoxy(29,19);
                                  cin>>dado[0];
+                                 dados(dado,recu);
                                   gotoxy(33,19);
                                   cout<<"                        ";
 
@@ -591,6 +665,7 @@ cout<<"NO";
                                  cout<<"<==INGRESE NUEVO VALOR";
                                  gotoxy(29,20);
                                  cin>>dado[1];
+                                 dados(dado,recu);
                                  gotoxy(33,20);
                                  cout<<"                         ";
 
@@ -604,6 +679,7 @@ cout<<"NO";
                                  cout<<"<==INGRESE NUEVO VALOR";
                                  gotoxy(29,21);
                                  cin>>dado[2];
+                                 dados(dado,recu);
                                  gotoxy(33,21);
                                   cout<<"                         ";
                              break;
@@ -687,255 +763,8 @@ cout<<"NO";
 
 
 
-/*
-        if (otratirada==1){
-    locate(5,17);
-    cout<<"Desea cambiar algun dado 1(cambiar los 3),2(si,cambiar 1 dado),3(cambiar 2)"<<endl;
-    locate(43,18);
-    cin>>conservar;
-    if(conservar==1){
-            system("cls");
-    recuadro(22,2,43,10,cBLANCO,cNEGRO);
-    system("COLOR 7F");
-
-        setColor(GREEN);
-    locate(23,3);
-     cout<< " ---------------------------------------- " <<endl;
-    locate(36,4);
-    cout<<"turno de: "<< jugador1<< endl;
-    locate(23,5);
-    cout<< " ---------------------------------------- " <<endl;
-    cambiardado1=0;
-    cambiardado2=0;
-
-       for(int j=0;j<3;j++){
-    locate(23,6+j+1);
-    cout<<"INGRESE EL DADO "<<j+1<<" ;";
-    cin>>dado[j];
-
-
-    }
-}
-        if(conservar==2){
-        locate(21,19);
-     cout<<"Que dado desea cambiar? (1,2,3)";
-     locate(43,20);
-     cin>>cambiardado1;
-     system("cls");
-        }
-
-        else if(conservar==3){
-        locate(21,18);
-    cout<<"Ingrese el primer dado a cambiar (1,2,3)";
-    locate(43,19);
-    cin>>cambiardado1;
-    locate(21,20);
-    cout<<"Ingrese el segundo dado a cambiar(1,2,3) ";
-    locate(43,21);
-    cin>>cambiardado2;
-        }
-
-    if((cambiardado1==1 && cambiardado2==2)|| (cambiardado2==1 && cambiardado1==2)) {
-             system("cls");
-    recuadro(22,2,43,10,cBLANCO,cNEGRO);
-    system("COLOR 7F");
-
-        setColor(GREEN);
-    locate(23,3);
-     cout<< " ---------------------------------------- " <<endl;
-    locate(36,4);
-    cout<<"turno de: "<< jugador1<< endl;
-    locate(23,5);
-    cout<< " ---------------------------------------- " <<endl;
-    cambiardado1=0;
-    cambiardado2=0;
-
-     locate(23,6);
-    cout<<"Ingresa el primer dado: ";
-    cin>>dado[0];
-    locate(23,7);
-    cout<<"Ingresa el segundo dado: ";
-    cin>>dado[1];
-    }
-    else if((cambiardado1==2 && cambiardado2==3) || (cambiardado1==3 && cambiardado2==2)){
-                system("cls");
-    recuadro(22,2,43,10,cBLANCO,cNEGRO);
-    system("COLOR 7F");
-
-        setColor(GREEN);
-    locate(23,3);
-     cout<< " ---------------------------------------- " <<endl;
-    locate(36,4);
-    cout<<"turno de: "<< jugador1<< endl;
-    locate(23,5);
-    cout<< " ---------------------------------------- " <<endl;
-    cambiardado1=0;
-    cambiardado2=0;
-
-     locate(23,6);
-    cout<<"Ingresa el segundo dado: ";
-    cin>>dado[1];
-    locate(23,7);
-    cout<<"Ingresa el tercer dado: ";
-    cin>>dado[2];
-    }
-    else if ((cambiardado1==1 && cambiardado2==3) || (cambiardado2==1 && cambiardado1==3)){
-
-                system("cls");
-    recuadro(22,2,43,10,cBLANCO,cNEGRO);
-    system("COLOR 7F");
-
-        setColor(GREEN);
-    locate(23,3);
-     cout<< " ---------------------------------------- " <<endl;
-    locate(36,4);
-    cout<<"turno de: "<< jugador1<< endl;
-    locate(23,5);
-    cout<< " ---------------------------------------- " <<endl;
-    cambiardado1=0;
-    cambiardado2=0;
-
-     locate(23,6);
-    cout<<"Ingresa el primer dado: ";
-    cin>>dado[0];
-    locate(23,7);
-    cout<<"Ingresa el tercer dado: ";
-    cin>>dado[2];
-    }
-    else if(cambiardado1==1){
-        system("cls");
-    recuadro(22,2,43,10,cBLANCO,cNEGRO);
-    system("COLOR 7F");
-
-        setColor(GREEN);
-    locate(23,3);
-     cout<< " ---------------------------------------- " <<endl;
-    locate(36,4);
-    cout<<"turno de: "<< jugador1<< endl;
-    locate(23,5);
-    cout<< " ---------------------------------------- " <<endl;
-    cambiardado1=0;
-    cambiardado2=0;
-
-     locate(23,6);
-    cout<<"Ingresa el primer dado: ";
-    cin>>dado[0];
-    }
-    else if(cambiardado1==2){
-                system("cls");
-    recuadro(22,2,43,10,cBLANCO,cNEGRO);
-    system("COLOR 7F");
-
-        setColor(GREEN);
-    locate(23,3);
-     cout<< " ---------------------------------------- " <<endl;
-    locate(36,4);
-    cout<<"turno de: "<< jugador1<< endl;
-    locate(23,5);
-    cout<< " ---------------------------------------- " <<endl;
-    cambiardado1=0;
-    cambiardado2=0;
-    locate(23,6);
-    cout<<"Ingresa el segundo dado: ";
-    cin>>dado[1];
-    }
-    else if(cambiardado1==3){
-                system("cls");
-    recuadro(22,2,43,10,cBLANCO,cNEGRO);
-    system("COLOR 7F");
-
-        setColor(GREEN);
-    locate(23,3);
-     cout<< " ---------------------------------------- " <<endl;
-    locate(36,4);
-    cout<<"turno de: "<< jugador1<< endl;
-    locate(23,5);
-    cout<< " ---------------------------------------- " <<endl;
-    cambiardado1=0;
-    cambiardado2=0;
-
-
-    locate(23,6);
-    cout<<"Ingresa el tercer dado: ";
-    cin>>dado[2];
-    }
-        }
-
-*/
-}
-void dados(int dado[2], int& recu){
-
- for(int d=0;d<=2;d++){
-
-        switch (dado[d])
-        {
-        case 1://dado1
-         dados(1,recu);
-        recu+=15;
-            break;
-        case 2://dado 2
-       dados(2,recu);
-        recu+=15;
-            break;
-            case 3://dado 3
-      dados(3,recu);
-        recu+=15;
-            break;
-            case 4://dado 4
-        dados(4,recu);
-        recu+=15;
-            break;
-             case 5://dado 5
-        dados(5,recu);
-        recu+=15;
-            break;
-    case 6://dado 6
-      dados(6,recu);
-        recu+=15;
-            break;
-
-        default:
-            break;
-        }
-
-
-
-    }
-
-recu=0;
-}
-void ingresardados(int dado[2]){
-    for(int j=0;j<3;j++){
-    locate(23,8+j+1);
-    cout<<"INGRESE EL DADO "<<j+1<<" ;";
-    cin>>dado[j];
-
-
-    }
-}
-void turnode(int contador , int dado[2],char jugador1[100],int recu){
-interfaz1();
-
-    recuadro(20,3,43,2,cBLANCO,cNEGRO);
-     recuadro(20,5,43,7,cBLANCO,cNEGRO);
-                                        system("COLOR 7F");
-                                        setColor(GREEN);
-                                        locate(36,2);
-                                           cout<<" 2 JUGADORES ";
-                                        locate(1,1);
-    cout<<"Ronda: "<<contador;
-    locate(23,6);
-    cargarAleatorio(dado,3,6);
-
-    locate(37,4);
-    cout<<"turno de: "<< jugador1<< endl;
-   dados(dado,recu);
-
-
-
 
 }
-
 
 int main()
 {
@@ -1123,7 +952,7 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
     locate(21,5);
     cout<< " ---------------------------------------- " <<endl;
     dados(dado,recu);
-    cambiardados(dado,otratirada,conservar,cambiardado1,cambiardado2,jugador1);
+    cambiardados(dado,otratirada,conservar,cambiardado1,cambiardado2,jugador1,recu);
 
         system("cls");
     recuadro(22,2,43,10,cBLANCO,cNEGRO);
