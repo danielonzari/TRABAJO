@@ -548,7 +548,7 @@ void dados(int dado[2], int& recu){
 
 
     }
-
+setColor(cVERDE);
 recu=0;
 }
 void ingresardados(int dado[2]){
@@ -656,6 +656,9 @@ int y=0,x=0;
 int key=0;
 bool ms=true;
 bool mnn=true;
+
+
+
     gotoxy(23,15);
 cout<<"DESEA CAMBIAR DE DADOS ?";
 gotoxy(24,17);
