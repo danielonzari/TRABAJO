@@ -1054,7 +1054,7 @@ cout<<"NO";
                                  gotoxy(33,23);
                                  cout<<"DADO 3="<<dado[2];
                                   do
-                                  {     comentariopuntaje(dado,puntuacion,jugador1);
+                                  {
                                         gotoxy(32,21+y);
                                         cout<<(char)219;
                                         key=getkey();
@@ -1071,6 +1071,7 @@ cout<<"NO";
                                                      gotoxy(40,21);
                                                      cout<<" ";
                                                  dado[0]=(rand()%6)+1;
+                                                 comentariopuntaje(dado,puntuacion,jugador1);
                                                       gotoxy(40,21);
                                                      cout<<dado[0];
                                                       dados(dado,recu);
@@ -1091,6 +1092,7 @@ cout<<"NO";
 
 
                                                  dado[1]=(rand()%6)+1;
+                                                 comentariopuntaje(dado,puntuacion,jugador1);
                                                         gotoxy(40,22);
                                                      cout<<dado[1];
                                                       dados(dado,recu);
@@ -1109,6 +1111,7 @@ cout<<"NO";
                                                      gotoxy(40,23);
                                                      cout<<" ";
                                                  dado[2]=(rand()%6)+1;
+                                                 comentariopuntaje(dado,puntuacion,jugador1);
                                                  gotoxy(40,23);
                                                      cout<<dado[2];
                                                       dados(dado,recu);
@@ -1174,7 +1177,7 @@ cout<<"NO";
                                  gotoxy(33,23);
                                  cout<<"DADO 3="<<dado[2];
                                   do
-                                  {      comentariopuntaje(dado,puntuacion,jugador1);
+                                  {
                                         gotoxy(32,21+y);
                                         cout<<(char)219;
                                         key=getkey();
@@ -1192,6 +1195,7 @@ cout<<"NO";
                                                      gotoxy(40,21);
                                                      cout<<" ";
                                                  dado[0]=(rand()%6)+1;
+                                                 comentariopuntaje(dado,puntuacion,jugador1);
                                                  dado1+=1;
                                                  DADO2+=1;
                                                       gotoxy(40,21);
@@ -1229,6 +1233,7 @@ cout<<"NO";
 
 
                                                  dado[1]=(rand()%6)+1;
+                                                 comentariopuntaje(dado,puntuacion,jugador1);
                                                  dado2+=1;
                                                  DADO2+=1;
                                                         gotoxy(40,22);
@@ -1265,6 +1270,7 @@ cout<<"NO";
                                                      gotoxy(40,23);
                                                      cout<<" ";
                                                  dado[2]=(rand()%6)+1;
+                                                 comentariopuntaje(dado,puntuacion,jugador1);
                                                  dado3+=1;
                                                  DADO2+=1;
                                                  gotoxy(40,23);
