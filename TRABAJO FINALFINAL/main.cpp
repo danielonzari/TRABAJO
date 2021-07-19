@@ -1468,6 +1468,16 @@ cout<<"NO";
 
 
 }
+void interfaz_2_jugadores(int& contador){interfaz1();
+
+    recuadro(20,3,43,2,cBLANCO,cNEGRO);
+     recuadro(20,5,43,7,cBLANCO,cNEGRO);
+                                        system("COLOR 7F");
+                                        setColor(GREEN);
+                                        locate(36,2);
+                                           cout<<" 2 JUGADORES ";
+                                        locate(1,1);
+    cout<<"Ronda: "<<contador;}
 int main()
 {
 system("mode con: cols=80 lines=30");
@@ -1884,21 +1894,9 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
 
         system("cls");
 
-    recuadro(22,2,43,10,cBLANCO,cNEGRO);
-    system("COLOR 7F");
-    setColor(GREEN);
-    locate(23,3);
-     cout<< " ---------------------------------------- " <<endl;
-    locate(36,4);
-    cout<<"turno de: "<< jugador1<< endl;
-    locate(23,5);
-    cout<< " ---------------------------------------- " <<endl;
 
-
-        for (i=0;i<=2;i++){
-                 locate(40,i+7);
-    cout<<"dado "<<i+1<<": "<<dado[i]<<endl;
-    }
+    interfaz_2_jugadores(contador);
+        dados(dado,recu);
      segunda_tirada_2_jugadores(dado,triple1,puntuacionj1,variable1,jugador1);
     locate(17,25);
     cout<<"PRESIONE CUALQUIER TECLA PARA PASAR EL TURNO DEL ADVERSARIO"<<endl;
@@ -1910,43 +1908,23 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
 cambiardado1=0;
     cambiardado2=0;
     system("cls");
-    recuadro(22,2,43,10,cBLANCO,cNEGRO);
-                                        system("COLOR 7F");
-                                        setColor(GREEN);
+    turnode(contador,dadoj2,jugador2,recu);
+
     locate(23,3);
     cargarAleatorio(dadoj2,3,6);
-    cout<< " ---------------------------------------- " <<endl;
-    locate(36,4);
-    cout<<"turno de: "<< jugador2<< endl;
-    locate(23,5);
-    cout<< " ---------------------------------------- " <<endl;
 
-    for (i=0;i<=2;i++){
-            locate(40,i+7);
-    cout<<"dado "<<i+1<<": "<<dadoj2[i]<<endl;
-    }
+
    segunda_tirada(otratirada,conservar,jugador2,cambiardado1,cambiardado2,dadoj2,i);
 
         system("cls");
-    recuadro(22,2,43,10,cBLANCO,cNEGRO);
-    system("COLOR 7F");
-    setColor(GREEN);
-    locate(23,3);
-     cout<< " ---------------------------------------- " <<endl;
-    locate(36,4);
-    cout<<"turno de: "<< jugador2<< endl;
-    locate(23,5);
-    cout<< " ---------------------------------------- " <<endl;
+   interfaz_2_jugadores(contador);
+    dados(dado,recu);
 
-
-        for (i=0;i<=2;i++){
-                 locate(40,i+7);
-    cout<<"dado "<<i+1<<": "<<dadoj2[i]<<endl;
-    }
      segunda_tirada_2_jugadores(dadoj2,triple1j2,puntuacionj2,variable2,jugador2);
     locate(20,17);
     cout<<"PRESIONE CUALQUIER TECLA PARA CONTINUAR"<<endl;
     getch();
+
     if ((triple1==1) && (triple1j2==1))
     {
         puntuacionj1=-1;
