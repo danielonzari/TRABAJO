@@ -957,6 +957,7 @@ int y=0,x=0;
 int key=0;
 bool ms=true;
 bool mnn=true;
+int DADO2=0;
 
 
 
@@ -1023,6 +1024,21 @@ cout<<"NO";
                      {   case 1:
                          switch (y)
                          {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                              case 0 ://CAMBIAR 1 DADO
                                     gotoxy(26,20);
                                     cout<<"       ";
@@ -1037,12 +1053,77 @@ cout<<"NO";
                                  gotoxy(33,23);
                                  cout<<"DADO 3="<<dado[2];
                                   do
-                                  {
+                                  {     comentariopuntaje(dado,puntuacion,jugador1);
                                         gotoxy(32,21+y);
                                         cout<<(char)219;
                                         key=getkey();
+
+
+
                                         switch (key)
+
                                         {
+                                        case 1://enter
+                                             switch (y)
+                                             {
+                                                 case 0://dado1
+                                                     gotoxy(40,21);
+                                                     cout<<" ";
+                                                 dado[0]=(rand()%6)+1;
+                                                      gotoxy(40,21);
+                                                     cout<<dado[0];
+                                                      dados(dado,recu);
+                                                      gotoxy(19,13);
+                                                      mnn=false;
+                                                      ms=false;
+                                                      cout<<"PRESIONE CUALQUIER TECLA PARA PASAR A LA TABLA"<<endl;
+                                                      getch();
+
+
+                                                 break;
+                                                 case 1://dado 2
+                                                     gotoxy(40,22);
+                                                     cout<<" ";
+
+
+
+                                                 dado[1]=(rand()%6)+1;
+                                                        gotoxy(40,22);
+                                                     cout<<dado[1];
+                                                      dados(dado,recu);
+                                                      gotoxy(19,13);
+                                                      mnn=false;
+                                                      ms=false;
+                                                      cout<<"PRESIONE CUALQUIER TECLA PARA PASAR A LA TABLA"<<endl;
+                                                      getch();
+
+
+
+                                                 break;
+                                                 case 2://dado 3
+                                                     gotoxy(40,23);
+                                                     cout<<" ";
+                                                 dado[2]=(rand()%6)+1;
+                                                 gotoxy(40,23);
+                                                     cout<<dado[2];
+                                                      dados(dado,recu);
+                                                     gotoxy(19,13);
+                                                      mnn=false;
+                                                      ms=false;
+                                                      cout<<"PRESIONE CUALQUIER TECLA PARA PASAR A LA TABLA"<<endl;
+                                                      getch();
+
+
+
+
+                                                 break;
+
+
+                                             }
+
+
+
+                                            break;
                                         case 15://abajo
                                             gotoxy(32,21+y);
                                             cout<<" ";
@@ -1072,37 +1153,257 @@ cout<<"NO";
                                   cout<<"                        ";
 
                              break;
-                             case 1 ://dado 2
-                                  gotoxy(29,20);
-                                 cout<<" ";
+                             case 1 ://2 DADOS
+                                 gotoxy(26,20);
+                                    cout<<"       ";
+                                    gotoxy(26,21);
+                                    cout<<"       ";
                                  gotoxy(33,20);
-                                 cout<<"<==INGRESE NUEVO VALOR";
-                                 gotoxy(29,20);
-                                 cin>>dado[1];
-                                 dados(dado,recu);
-                                 gotoxy(33,20);
-                                 cout<<"                         ";
+                                 cout<<"ELIJA QUE DADO DESEA CAMBIAR ";
+                                 gotoxy(33,21);
+                                 cout<<"DADO 1="<<dado[0];
+                                 gotoxy(33,22);
+                                 cout<<"DADO 2="<<dado[1];
+                                 gotoxy(33,23);
+                                 cout<<"DADO 3="<<dado[2];
+                                  do
+                                  {      comentariopuntaje(dado,puntuacion,jugador1);
+                                        gotoxy(32,21+y);
+                                        cout<<(char)219;
+                                        key=getkey();
+
+
+
+                                        switch (key)
+
+                                        {
+                                        case 1://enter
+                                             switch (y)
+                                             {
+                                                 case 0://dado1
+                                                     gotoxy(40,21);
+                                                     cout<<" ";
+                                                 dado[0]=(rand()%6)+1;
+                                                 DADO2+=1;
+                                                      gotoxy(40,21);
+                                                     cout<<dado[0];
+                                                      dados(dado,recu);
+
+                                                      if(DADO2==2){
+                                                            gotoxy(19,13);
+                                                         mnn=false;
+                                                      ms=false;
+                                                      cout<<"PRESIONE CUALQUIER TECLA PARA PASAR A LA TABLA"<<endl;
+                                                      getch();
+                                                      }
+
+
+
+                                                 break;
+                                                 case 1://dado 2
+                                                     gotoxy(40,22);
+                                                     cout<<" ";
+
+
+
+                                                 dado[1]=(rand()%6)+1;
+                                                 DADO2+=1;
+                                                        gotoxy(40,22);
+                                                     cout<<dado[1];
+                                                      dados(dado,recu);
+
+                                                       if(DADO2==2){
+                                                            gotoxy(19,13);
+                                                         mnn=false;
+                                                      ms=false;
+                                                      cout<<"PRESIONE CUALQUIER TECLA PARA PASAR A LA TABLA"<<endl;
+                                                      getch();
+                                                      }
+
+
+
+                                                 break;
+                                                 case 2://dado 3
+                                                     gotoxy(40,23);
+                                                     cout<<" ";
+                                                 dado[2]=(rand()%6)+1;
+                                                 DADO2+=1;
+                                                 gotoxy(40,23);
+                                                     cout<<dado[2];
+                                                      dados(dado,recu);
+
+                                                       if(DADO2==2){
+                                                            gotoxy(19,13);
+                                                         mnn=false;
+                                                      ms=false;
+                                                      cout<<"PRESIONE CUALQUIER TECLA PARA PASAR A LA TABLA"<<endl;
+                                                      getch();
+                                                      }
+
+
+
+
+
+                                                 break;
+
+
+                                             }
+
+
+
+                                            break;
+                                        case 15://abajo
+                                            gotoxy(32,21+y);
+                                            cout<<" ";
+                                            y+=1;
+                                              if(y>2){
+                                                    y=0;
+                                                }
+                                            break;
+                                         case 14://arriba
+                                            gotoxy(32,21+y);
+                                            cout<<" ";
+                                            y-=1;
+                                             if(y<0){
+                                              y=2;
+                                                }
+
+                                            break;
+
+                                        }
+
+
+                                  } while (DADO2!=2);
+
 
 
 
                              break;
                              case 2 ://dado 3
-                                 gotoxy(29,21);
-                                 cout<<" ";
+
+                                 gotoxy(26,20);
+                                    cout<<"       ";
+                                    gotoxy(25,21);
+                                    cout<<"        ";
+                                 gotoxy(33,20);
+                                 cout<<"ELIJA QUE DADO DESEA CAMBIAR ";
                                  gotoxy(33,21);
-                                 cout<<"<==INGRESE NUEVO VALOR";
-                                 gotoxy(29,21);
-                                 cin>>dado[2];
-                                 dados(dado,recu);
-                                 gotoxy(33,21);
-                                  cout<<"                         ";
+                                 cout<<"DADO 1="<<dado[0];
+                                 gotoxy(33,22);
+                                 cout<<"DADO 2="<<dado[1];
+                                 gotoxy(33,23);
+                                 cout<<"DADO 3="<<dado[2];
+                                  do
+                                  {     comentariopuntaje(dado,puntuacion,jugador1);
+                                        gotoxy(32,21+y);
+                                        cout<<(char)219;
+                                        key=getkey();
+
+
+
+                                        switch (key)
+
+                                        {
+                                        case 1://enter
+                                             switch (y)
+                                             {
+                                                 case 0://dado1
+                                                     gotoxy(40,21);
+                                                     cout<<" ";
+                                                 dado[0]=(rand()%6)+1;
+                                                 DADO2+=1;
+                                                      gotoxy(40,21);
+                                                     cout<<dado[0];
+                                                      dados(dado,recu);
+
+                                                      if(DADO2==3){
+                                                            gotoxy(19,13);
+                                                         mnn=false;
+                                                      ms=false;
+                                                      cout<<"PRESIONE CUALQUIER TECLA PARA PASAR A LA TABLA"<<endl;
+                                                      getch();
+                                                      }
+
+
+
+                                                 break;
+                                                 case 1://dado 2
+                                                     gotoxy(40,22);
+                                                     cout<<" ";
+
+
+
+                                                 dado[1]=(rand()%6)+1;
+                                                 DADO2+=1;
+                                                        gotoxy(40,22);
+                                                     cout<<dado[1];
+                                                      dados(dado,recu);
+
+                                                       if(DADO2==3){
+                                                            gotoxy(19,13);
+                                                         mnn=false;
+                                                      ms=false;
+                                                      cout<<"PRESIONE CUALQUIER TECLA PARA PASAR A LA TABLA"<<endl;
+                                                      getch();
+                                                      }
+
+
+
+                                                 break;
+                                                 case 2://dado 3
+                                                     gotoxy(40,23);
+                                                     cout<<" ";
+                                                 dado[2]=(rand()%6)+1;
+                                                 DADO2+=1;
+                                                 gotoxy(40,23);
+                                                     cout<<dado[2];
+                                                      dados(dado,recu);
+
+                                                       if(DADO2==3){
+                                                            gotoxy(19,13);
+                                                         mnn=false;
+                                                      ms=false;
+                                                      cout<<"PRESIONE CUALQUIER TECLA PARA PASAR A LA TABLA"<<endl;
+                                                      getch();
+                                                      }
+
+
+
+
+
+                                                 break;
+
+
+                                             }
+
+
+
+                                            break;
+                                        case 15://abajo
+                                            gotoxy(32,21+y);
+                                            cout<<" ";
+                                            y+=1;
+                                              if(y>2){
+                                                    y=0;
+                                                }
+                                            break;
+                                         case 14://arriba
+                                            gotoxy(32,21+y);
+                                            cout<<" ";
+                                            y-=1;
+                                             if(y<0){
+                                              y=2;
+                                                }
+
+                                            break;
+
+                                        }
+
+
+                                  } while (DADO2!=3);
                              break;
 
-                       case 4 ://LISTO
-                           mnn=false;
-                           ms=false;
-                        cls();
-                        break;
+
 
                          }
 
@@ -1461,7 +1762,7 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
     cout<<"TUS DADOS SON: "<<endl;
     locate(21,5);
     cout<< " ---------------------------------------- " <<endl;
-    locate(32,13);
+    locate(34,12);
 
     cout<<"Saldo actual: "<<saldoinicial<<"$";
 
