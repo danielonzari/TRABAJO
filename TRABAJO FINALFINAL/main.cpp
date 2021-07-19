@@ -385,6 +385,10 @@ if(conservaar==1){
     }
         }}
 void segunda_tirada_2_jugadores(int dados[2],int& tripleuno,int& puntuacion,int& variableuno,char jugador[100]){
+    locate(37,4);
+    cout<<"turno de: "<< jugador<< endl;
+
+
 if( (dados[0]==1) && (dados[1]==1) && (dados[2]==1) ){
             locate(25,13);
         cout<<"Realizaste triple 1";
@@ -395,20 +399,20 @@ if( (dados[0]==1) && (dados[1]==1) && (dados[2]==1) ){
 
     else if ((dados[0]==dados[1]) && (dados[1]==dados[2]))
     {
-            locate(17,13);
-    cout<<"Felicidades usted saco numeros iguales gano instantaneamente";
+            locate(22,13);
+    cout<<"Felicidades usted saco numeros iguales";locate(25,14);cout<<"Si su contrincante no lo supera, gana";
         puntuacion=100000;
     }
     else if((dados[0]==1 || dados[1]==1 || dados[2]==1) && (dados[0]==2 || dados[1]==2 || dados[2]==2) && (dados[0]==3 || dados[1]==3 || dados[2]==3)){
 
             locate(25,13);
-    cout<<"Usted saco 1,2,3, perdio instantaneamente";
+    cout<<"Usted saco 1,2,3, perdio instantaneamente";locate(47,14);cout<<"Si su contrincante no lo iguala, pierde";
     puntuacion=-0;
 
             }
     else if((dados[0]==4 || dados[1]==4 || dados[2]==4) && (dados[0]==5 || dados[1]==5 || dados[2]==5) && (dados[0]==6 || dados[1]==6 || dados[2]==6)){
-    locate(14,13);
-    cout<<"Felicidades usted saco un 4,5,6, tiene muchas probabiblidades de ganar";locate(17,14);cout<<" si su oponente no lo iguala, deberia pagarle el doble";
+    locate(9,13);
+    cout<<"Felicidades usted saco un 4,5,6, tiene muchas probabiblidades de ganar";locate(22,14);cout<<" si su oponente no lo iguala, deberia pagarle el doble";
     variableuno=1;
     }
 
@@ -502,7 +506,7 @@ cls();
 
 
 locate(2,6);
-    cout<<(char)254<<"Si un jugador obtiene los tres dados del mismo numero(triple 2,3,4,5 o 6)"<<endl;locate(4,7);cout<< "ganara automaticamente la partida y obtendra tres veces la cantidad de"<<endl;locate(4,8);cout<< "dinero apostada originalmente.";
+    cout<<(char)254<<"Si un jugador obtiene los tres dados del mismo numero(triple 2,3,4,5 o 6)"<<endl;locate(4,7);cout<< "obtendra cuatro veces la cantidad de dinero apostada originalmente.";
     locate(22,22);
     cout<<"PRESIONE CUALQUIER TECLA PARA CONTINUAR"<<endl;
     getch();
@@ -511,20 +515,20 @@ locate(2,6);
 
     cout<<(char)254<<"Sin embargo, si un jugador obtiene un 1 en los tres dados, pierde."<<endl;
     locate(2,11);
-    cout<< "automaticamente y debera pagar el triple de la cantidad de dinero apostada"<<endl;locate(2,13);cout<< "a su oponente. Estas dos reglas especiales se llaman Tormenta."<<endl;
-      locate(22,22);
-    cout<<"PRESIONE CUALQUIER TECLA PARA CONTINUAR"<<endl;
-    locate(2,13);
-
-    cout<<(char)254<<"Por otra parte, si un jugador obtiene un 4-5-6 ganara de forma automatica,"<<endl;
+    cout<< "automaticamente y debera pagar el triple de la cantidad de dinero apostada"<<endl;locate(2,12);cout<< "a su oponente. Estas dos reglas especiales se llaman Tormenta."<<endl;
       locate(22,22);
     cout<<"PRESIONE CUALQUIER TECLA PARA CONTINUAR"<<endl;
     locate(2,14);
-    cout<<"ademas su rival debera pagarle el doble de lo apostado."<<endl;
+
+    cout<<(char)254<<"Por otra parte, si un jugador obtiene un 4-5-6" <<endl;
+      locate(22,22);
+    cout<<"PRESIONE CUALQUIER TECLA PARA CONTINUAR"<<endl;
+    locate(2,15);
+    cout<<"y su rival debera pagarle el doble de lo apostado."<<endl;
 
         getch();
-    locate(2,16);
-    cout<<(char)254<<"Por el contrario, si un jugador obtiene un 1-2-3 perdera automaticamente"<<endl;locate(2,17);cout<< "y debera pagar el doble de la apuesta a su oponente.";
+    locate(2,17);
+    cout<<(char)254<<"Por el contrario, si un jugador obtiene un 1-2-3 perdera automaticamente"<<endl;locate(2,18);cout<< "y debera pagar el doble de la apuesta a su oponente.";
 getch();
 cls();}
 
@@ -1851,7 +1855,9 @@ recuadro(20,8,43,5,cBLANCO,cNEGRO);
    dados(dado,recu);*/
    turnode(contador,dado,jugador1,recu);
 
-   segunda_tirada(otratirada,conservar,jugador1,cambiardado1,cambiardado2,dado,i);
+
+   cambiardadosj1(dado,otratirada,conservar,cambiardado1,cambiardado2,jugador1,recu,puntuacionj1);
+
 
         system("cls");
 
@@ -1874,8 +1880,8 @@ cambiardado1=0;
     locate(23,3);
     cargarAleatorio(dadoj2,3,6);
 
+    cambiardadosj1(dadoj2,otratirada,conservar,cambiardado1,cambiardado2,jugador2,recu,puntuacionj2);
 
-   segunda_tirada(otratirada,conservar,jugador2,cambiardado1,cambiardado2,dadoj2,i);
 
         system("cls");
    interfaz_2_jugadores(contador);
@@ -1885,7 +1891,11 @@ cambiardado1=0;
     locate(20,17);
     cout<<"PRESIONE CUALQUIER TECLA PARA CONTINUAR"<<endl;
     getch();
+    if(puntuacionj1==100000 || puntuacionj2==100000){
+        ganador=apuesta*4;
 
+
+    }
     if ((triple1==1) && (triple1j2==1))
     {
         puntuacionj1=-1;
@@ -1914,7 +1924,7 @@ cambiardado1=0;
     if (puntuacionj1==puntuacionj2) {
             locate(23,3);
     cout << " --------------------------------------- "<< endl;
-            locate(35,4);
+            locate(40,4);
         cout << " EMPATE " << endl;
         locate(23,5);
     cout << " --------------------------------------- "<< endl;
@@ -1937,7 +1947,8 @@ cambiardado1=0;
                 locate(25,4);
             cout << " GANO EL JUGADOR "<<jugador2<<" FELICIDADES " << endl;
             locate(32,6);
-            cout<<"RECIBIO UN TOTAL DE: "<<ganador;locate(37,7);cout<<"Pagate el asado";
+            cout<<"RECIBIO UN TOTAL DE: "<<ganador;
+            locate(37,7);cout<<"Pagate el asado";
             apuesta2=0;
         }
     }

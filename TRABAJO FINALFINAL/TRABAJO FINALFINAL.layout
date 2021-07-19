@@ -2,14 +2,9 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="funciones.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="103" topLine="15" />
-		</Cursor>
-	</File>
 	<File name="main.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="63372" topLine="21" />
+			<Cursor1 position="17612" topLine="87" />
 		</Cursor>
 		<Folding>
 			<Collapse line="15" />
@@ -20,29 +15,33 @@
 			<Collapse line="256" />
 			<Collapse line="309" />
 			<Collapse line="386" />
-			<Collapse line="387" />
-			<Collapse line="447" />
-			<Collapse line="530" />
-			<Collapse line="571" />
-			<Collapse line="580" />
-			<Collapse line="602" />
-			<Collapse line="763" />
-			<Collapse line="1470" />
+			<Collapse line="534" />
+			<Collapse line="575" />
+			<Collapse line="584" />
+			<Collapse line="606" />
+			<Collapse line="767" />
+			<Collapse line="958" />
+			<Collapse line="1435" />
 		</Folding>
+	</File>
+	<File name="funciones.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="103" topLine="15" />
+		</Cursor>
 	</File>
 	<File name="dadosf.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="332" topLine="9" />
 		</Cursor>
 	</File>
-	<File name="dados.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
 	<File name="rlutil.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="2989" topLine="257" />
+		</Cursor>
+	</File>
+	<File name="dados.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
