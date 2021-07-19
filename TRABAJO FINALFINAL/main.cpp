@@ -1164,8 +1164,9 @@ cout<<"NO";
 
                              break;
                              case 1 ://2 DADOS
-                                 gotoxy(26,20);
-                                    cout<<"       ";
+
+                                 gotoxy(25,20);
+                                    cout<<" ";
                                     gotoxy(26,21);
                                     cout<<"       ";
                                  gotoxy(33,20);
