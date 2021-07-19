@@ -958,6 +958,7 @@ int key=0;
 bool ms=true;
 bool mnn=true;
 int DADO2=0;
+int dado1=0,dado2=0,dado3=0;
 
 
 
@@ -1076,7 +1077,9 @@ cout<<"NO";
                                                       gotoxy(19,13);
                                                       mnn=false;
                                                       ms=false;
+                                                      setColor(RED);
                                                       cout<<"PRESIONE CUALQUIER TECLA PARA PASAR A LA TABLA"<<endl;
+                                                      setColor(GREEN);
                                                       getch();
 
 
@@ -1094,7 +1097,9 @@ cout<<"NO";
                                                       gotoxy(19,13);
                                                       mnn=false;
                                                       ms=false;
+                                                       setColor(RED);
                                                       cout<<"PRESIONE CUALQUIER TECLA PARA PASAR A LA TABLA"<<endl;
+                                                      setColor(GREEN);
                                                       getch();
 
 
@@ -1110,7 +1115,9 @@ cout<<"NO";
                                                      gotoxy(19,13);
                                                       mnn=false;
                                                       ms=false;
+                                                       setColor(RED);
                                                       cout<<"PRESIONE CUALQUIER TECLA PARA PASAR A LA TABLA"<<endl;
+                                                      setColor(GREEN);
                                                       getch();
 
 
@@ -1181,19 +1188,33 @@ cout<<"NO";
                                              switch (y)
                                              {
                                                  case 0://dado1
+                                                     if(dado1==0){
                                                      gotoxy(40,21);
                                                      cout<<" ";
                                                  dado[0]=(rand()%6)+1;
+                                                 dado1+=1;
                                                  DADO2+=1;
                                                       gotoxy(40,21);
                                                      cout<<dado[0];
                                                       dados(dado,recu);
+                                                     gotoxy(41,21);
+                                                      cout<<"               ";
+                                                      gotoxy(41,22);
+                                                      cout<<"               ";
+                                                      gotoxy(41,23);
+                                                      cout<<"               ";
+                                                      }else{
+                                                          gotoxy(41,21);
+                                                      cout<<"ELIGE OTRO DADO";
+                                                      }
 
                                                       if(DADO2==2){
                                                             gotoxy(19,13);
                                                          mnn=false;
                                                       ms=false;
+                                                      setColor(RED);
                                                       cout<<"PRESIONE CUALQUIER TECLA PARA PASAR A LA TABLA"<<endl;
+                                                      setColor(GREEN);
                                                       getch();
                                                       }
 
@@ -1201,22 +1222,38 @@ cout<<"NO";
 
                                                  break;
                                                  case 1://dado 2
+                                                     if(dado2==0){
                                                      gotoxy(40,22);
                                                      cout<<" ";
 
 
 
                                                  dado[1]=(rand()%6)+1;
+                                                 dado2+=1;
                                                  DADO2+=1;
                                                         gotoxy(40,22);
                                                      cout<<dado[1];
                                                       dados(dado,recu);
+                                                      gotoxy(41,21);
+                                                      cout<<"               ";
+                                                      gotoxy(41,22);
+                                                      cout<<"               ";
+                                                      gotoxy(41,23);
+                                                      cout<<"               ";
+                                                      }
+                                                      else{
+                                                          gotoxy(41,22);
+                                                      cout<<"ELIGE OTRO DADO";
+                                                      }
+
 
                                                        if(DADO2==2){
                                                             gotoxy(19,13);
                                                          mnn=false;
                                                       ms=false;
+                                                       setColor(RED);
                                                       cout<<"PRESIONE CUALQUIER TECLA PARA PASAR A LA TABLA"<<endl;
+                                                      setColor(GREEN);
                                                       getch();
                                                       }
 
@@ -1224,19 +1261,34 @@ cout<<"NO";
 
                                                  break;
                                                  case 2://dado 3
+                                                     if(dado3==0){
                                                      gotoxy(40,23);
                                                      cout<<" ";
                                                  dado[2]=(rand()%6)+1;
+                                                 dado3+=1;
                                                  DADO2+=1;
                                                  gotoxy(40,23);
                                                      cout<<dado[2];
                                                       dados(dado,recu);
+                                                      gotoxy(41,21);
+                                                      cout<<"               ";
+                                                      gotoxy(41,22);
+                                                      cout<<"               ";
+                                                      gotoxy(41,23);
+                                                      cout<<"               ";
+                                                      }
+                                                      else{
+                                                          gotoxy(41,23);
+                                                      cout<<"ELIGE OTRO DADO";
+                                                      }
 
                                                        if(DADO2==2){
                                                             gotoxy(19,13);
                                                          mnn=false;
                                                       ms=false;
+                                                       setColor(RED);
                                                       cout<<"PRESIONE CUALQUIER TECLA PARA PASAR A LA TABLA"<<endl;
+                                                      setColor(GREEN);
                                                       getch();
                                                       }
 
@@ -1286,122 +1338,24 @@ cout<<"NO";
                                     gotoxy(25,21);
                                     cout<<"        ";
                                  gotoxy(33,20);
-                                 cout<<"ELIJA QUE DADO DESEA CAMBIAR ";
+                                 cout<<"HA REALIZADO OTRA TIRADA ";
+                                 cargarAleatorio(dado,3,6);
                                  gotoxy(33,21);
                                  cout<<"DADO 1="<<dado[0];
                                  gotoxy(33,22);
                                  cout<<"DADO 2="<<dado[1];
                                  gotoxy(33,23);
                                  cout<<"DADO 3="<<dado[2];
-                                  do
-                                  {     comentariopuntaje(dado,puntuacion,jugador1);
-                                        gotoxy(32,21+y);
-                                        cout<<(char)219;
-                                        key=getkey();
-
-
-
-                                        switch (key)
-
-                                        {
-                                        case 1://enter
-                                             switch (y)
-                                             {
-                                                 case 0://dado1
-                                                     gotoxy(40,21);
-                                                     cout<<" ";
-                                                 dado[0]=(rand()%6)+1;
-                                                 DADO2+=1;
-                                                      gotoxy(40,21);
-                                                     cout<<dado[0];
-                                                      dados(dado,recu);
-
-                                                      if(DADO2==3){
-                                                            gotoxy(19,13);
-                                                         mnn=false;
+                                 dados(dado,recu);
+                                 comentariopuntaje(dado,puntuacion,jugador1);
+                                  mnn=false;
                                                       ms=false;
+                                                    gotoxy(19,13);
+                                                      setColor(RED);
                                                       cout<<"PRESIONE CUALQUIER TECLA PARA PASAR A LA TABLA"<<endl;
+                                                      setColor(GREEN);
                                                       getch();
-                                                      }
 
-
-
-                                                 break;
-                                                 case 1://dado 2
-                                                     gotoxy(40,22);
-                                                     cout<<" ";
-
-
-
-                                                 dado[1]=(rand()%6)+1;
-                                                 DADO2+=1;
-                                                        gotoxy(40,22);
-                                                     cout<<dado[1];
-                                                      dados(dado,recu);
-
-                                                       if(DADO2==3){
-                                                            gotoxy(19,13);
-                                                         mnn=false;
-                                                      ms=false;
-                                                      cout<<"PRESIONE CUALQUIER TECLA PARA PASAR A LA TABLA"<<endl;
-                                                      getch();
-                                                      }
-
-
-
-                                                 break;
-                                                 case 2://dado 3
-                                                     gotoxy(40,23);
-                                                     cout<<" ";
-                                                 dado[2]=(rand()%6)+1;
-                                                 DADO2+=1;
-                                                 gotoxy(40,23);
-                                                     cout<<dado[2];
-                                                      dados(dado,recu);
-
-                                                       if(DADO2==3){
-                                                            gotoxy(19,13);
-                                                         mnn=false;
-                                                      ms=false;
-                                                      cout<<"PRESIONE CUALQUIER TECLA PARA PASAR A LA TABLA"<<endl;
-                                                      getch();
-                                                      }
-
-
-
-
-
-                                                 break;
-
-
-                                             }
-
-
-
-                                            break;
-                                        case 15://abajo
-                                            gotoxy(32,21+y);
-                                            cout<<" ";
-                                            y+=1;
-                                              if(y>2){
-                                                    y=0;
-                                                }
-                                            break;
-                                         case 14://arriba
-                                            gotoxy(32,21+y);
-                                            cout<<" ";
-                                            y-=1;
-                                             if(y<0){
-                                              y=2;
-                                                }
-
-                                            break;
-
-                                        }
-
-
-                                  } while (DADO2!=3);
-                             break;
 
 
 
